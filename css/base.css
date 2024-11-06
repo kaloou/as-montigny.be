@@ -1,0 +1,28 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --main-color: #640a34;
+  --text-color: black;
+  --blue-color: #4c8cc6;
+  --yellow-color: #fadf00;
+  --bg-color: #fff;
+  --dark: #34495e;
+  --light: #ffffff;
+  --success: #0abf30;
+  --error: #e24d4c;
+  --warning: #e9bd0c;
+  --info: #3498db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto", "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-align: justify;
+}

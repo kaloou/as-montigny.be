@@ -1,0 +1,46 @@
+header {
+  background: url(../img/griffes-head.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 180px;
+  height: 30%;
+}
+body {
+  background-color: white;
+}
+/* nav {
+  padding: 0;
+} */
+main {
+  padding: 0;
+}
+figure .banniere-container {
+  padding: auto;
+}
+
+section .sponsors {
+  padding: auto;
+}
+section .match-container {
+  padding: auto;
+}
+section.actu-container {
+  padding: auto;
+}
+section .coach-container {
+  padding: auto;
+}
+footer {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--yellow-color) 0%,
+    var(--yellow-color) 7px,
+    var(--blue-color) 7px,
+    var(--blue-color) 12px,
+    var(--main-color) 6px
+  );
+  color: #fff;
+  padding: 40px 0;
+}
