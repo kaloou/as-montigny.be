@@ -74,6 +74,7 @@
   inset: auto auto auto 0%;
   overflow: hidden;
   box-shadow: 45px 0 80px -6px #00000036;
+  transform: scaleY(-1);
 }
 
 .wrap1 {
@@ -210,4 +211,119 @@
 .actu-container .column img:hover {
   transform: scale(1.2) translate(-10%, -10%);
   transition: transform 0.5s ease;
+}
+
+/* Ovale étendu */
+.oval-shape {
+  margin-top: 50vh;
+  width: 130vw; /* Largeur de 200% pour qu'elle dépasse des deux côtés */
+  height: 100vh; /* Hauteur de 150% pour qu'elle soit plus grande que l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Masque les parties de l'image en dehors de la forme ovale */
+  position: relative;
+  top: 50%; /* Centre verticalement */
+  left: 50%; /* Centre horizontalement */
+  transform: translate(-50%, -50%); /* Assure le centrage parfait */
+  border-radius: 50%; /* Forme ovale */
+}
+
+/* Image ajustée */
+.img3 {
+  width: 100%; /* Prend toute la largeur du conteneur */
+  height: 100%; /* Prend toute la hauteur du conteneur */
+  object-fit: cover; /* Couvre le conteneur en conservant les proportions */
+  border-radius: 50%; /* Rend l'image ovale pour s'adapter au conteneur */
+  transform: scaleX(1) scaleY(1);
+  filter: brightness(0.5) saturate(1.5) hue-rotate(-10deg);
+}
+
+/*MATCH*/
+.matchs {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.previous,
+.next,
+.classement {
+  width: 30%;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.previous h2,
+.next h2,
+.classement h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Style des box de match */
+.match-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.division {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.match-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 0.5rem;
+}
+
+.team-logo {
+  font-size: 1.5rem;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style du tableau de classement */
+.ranking-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ranking-table th,
+.ranking-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.ranking-table th {
+  background-color: #ddd;
+  color: #333;
+  font-weight: bold;
+}
+
+.ranking-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ranking-table tbody tr:hover {
+  background-color: #e0e0e0;
 }

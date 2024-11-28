@@ -1,0 +1,24 @@
+navbar ajout et retrait:
+V ajout : planning
+V ajout : sponsoring
+V ajout : cotisation
+V ajout : organigramme
+V ajout : a propos
+
+new navbar: 
+
+equipes ->
+-effectifs -> différentes équipes -> organigramme
+-planning
+--cotisation
+
+evenements->
+
+club ->
+--à propos/histoire
+-sponsoring -> don
+-projets -> don
+
+contact ->
+
+Boutique->

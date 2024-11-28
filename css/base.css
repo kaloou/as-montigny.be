@@ -1,6 +1,7 @@
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
   --main-color: #640a34;
@@ -21,7 +22,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: "Roboto", "Poppins", sans-serif;
+  font-family: "Inter", "Roboto", "Poppins", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
   text-align: justify;
