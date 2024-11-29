@@ -8,37 +8,41 @@ import undetected_chromedriver as uc
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-# chrome_options.add_argument("--user-data-dir=/Users/kalou/Library/Application Support/Google/Chrome/User Data")
-# chrome_options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36")
 
+# launch driver
 driver = uc.Chrome(options=chrome_options)
 driver.get('https://www.acff.be/club/8361/matches-a-venir')
 
 try:
-    # team name
+    # extraction des noms d'équipe
     elements = WebDriverWait(driver, 10).until(
         EC.presence_of_all_elements_located((By.CLASS_NAME, "team-name"))
     )
     for element in elements:
-        print(element.text)
+        print("Nom de l'équipe :", element.text)
 
-    # score
-    elementts = WebDriverWait(driver, 10).until(
+    # extraction des scores
+    scores = WebDriverWait(driver, 10).until(
         EC.presence_of_all_elements_located((By.CLASS_NAME, "score"))
     )
-    
-    # Extraire et imprimer le texte de chaque élément
-    for elementt in elementts:
-        print(elementt.text)
+    for score in scores:
+        print("Score :", score.text)
 
-    #catégorie
-    elementtts = WebDriverWait(driver, 10).until(
+    # extraction des catégories de match
+    categories = WebDriverWait(driver, 10).until(
         EC.presence_of_all_elements_located((By.CLASS_NAME, "game-type"))
     )
-    
-    # Extraire et imprimer le texte de chaque élément
-    for elementtt in elementtts:
-        print(elementtt.text)
+    for category in categories:
+        print("Catégorie :", category.text)
+
+    # extraction des images
+    images = WebDriverWait(driver, 10).until(
+        EC.presence_of_all_elements_located((By.TAG_NAME, "img"))
+    )
+    for img in images:
+        img_url = img.get_attribute("src")
+        if img_url and "belgianfootball.s3.eu-central-1.amazonaws.com" in img_url and "/rbfa/img/logos/clubs/" in img_url:
+            print("Image URL :", img_url)
 
 except Exception as e:
     print("Erreur :", e)
