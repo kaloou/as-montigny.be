@@ -1,58 +1,11 @@
-/*--titles--*/
-.titre {
-  font-family: "Roboto" "Poppins" "Montserrat", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 0.1em;
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  padding: 20px;
-  font-weight: 900;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.titre span {
-  background-image: linear-gradient(to bottom, var(--main-color), var(--main-color));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.soustitre {
-  font-size: 2rem;
-  font-family: "Roboto" "Montserrat", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  padding: 20px;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
-.soustitre span {
-  background-image: linear-gradient(to bottom, #640a34, #640a34);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
+/*----HEADER----*/
 
-.inter-bold {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+header {
+  background: url(../img/griffes-head.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 180px;
 }
-
-.inter-light {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-/*--HEADER----*/
-
 /*--socials--*/
 .socialmedia {
   width: auto;
@@ -82,13 +35,11 @@
   justify-content: space-around;
   background-color: transparent;
 }
-
 .navcontainer li {
   display: inline-block;
   vertical-align: top;
   position: relative;
 }
-
 .navcontainer li a {
   display: block;
   padding: 25px;
@@ -114,7 +65,6 @@
 .sub-menu li {
   display: block;
 }
-
 .sub-menu li a {
   color: black;
   padding: 15px;
@@ -124,12 +74,10 @@
   justify-content: center;
   transform: skew(0deg);
 }
-
 .sub-menu li a:hover {
   background-color: var(--main-color);
   color: #fff;
 }
-
 .second-sub-menu {
   display: none;
   position: absolute;
@@ -140,22 +88,18 @@
   border: 1px solid black;
   z-index: 12;
 }
-
 .second-sub-menu li a {
   color: black;
   text-align: center;
   position: relative;
   transform: skew(0deg);
 }
-
 .navcontainer li:hover > .sub-menu {
   display: block;
 }
-
 .sub-menu li:hover > .second-sub-menu {
   display: block;
 }
-
 .navcontainer .main-point:hover {
   color: var(--main-color);
   transition-delay: 0.1s;
@@ -172,7 +116,7 @@
   transition: color 0.3s ease;
 }
 
-/* Barre qui apparaît au survol */
+/* Barre de survol */
 .navcontainer .main-point::after {
   content: "";
   position: absolute;
@@ -184,21 +128,17 @@
   transition: width 0.3s ease, left 0.3s ease;
   transform: translateX(-50%);
 }
-
-/* Survol : la barre s'étend */
 .navcontainer .main-point:hover {
   color: var(--main-color);
 }
-
 .navcontainer .main-point:hover::after {
   width: 65%; /* Largeur de la barre quand elle est complètement étendue */
   left: 50%;
 }
 
-/*------Footer-----*/
+/*----Footer----*/
 footer {
-  position: relative;
-  width: 100%;
+  color: #fff;
   background-image: linear-gradient(
     to bottom,
     var(--yellow-color) 0%,
@@ -207,9 +147,8 @@ footer {
     var(--blue-color) 12px,
     var(--main-color) 6px
   );
-  color: #fff;
-  padding: 40px 0;
 }
+
 /*--logo footer--*/
 .logocontainer-footer {
   position: absolute;
@@ -224,6 +163,7 @@ footer {
   width: 95px;
   filter: drop-shadow(0 0 0.5rem var(--main-color));
 }
+
 /*--Contenu footer--*/
 .footer-container {
   display: flex;
@@ -280,6 +220,7 @@ footer {
   width: 15px;
   height: 15px;
 }
+
 /*--Equipes et Club Footer--*/
 .footer-section-small h3 {
   font-size: 24px;
@@ -320,6 +261,7 @@ footer {
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
 /*--bottom footer--*/
 .social-icon-container {
   display: flex;
@@ -356,6 +298,58 @@ footer {
   text-align: center;
 }
 
+/*--Titles--*/
+.titre {
+  font-family: "Roboto" "Poppins" "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  padding: 20px;
+  font-weight: 900;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.titre span {
+  background-image: linear-gradient(to bottom, var(--main-color), var(--main-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.soustitre {
+  font-size: 2rem;
+  font-family: "Roboto" "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.soustitre span {
+  background-image: linear-gradient(to bottom, #640a34, #640a34);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.inter-light {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* templates for a repeated background */
 .repeated-background {
   width: 100%;
   height: 2000px;

@@ -1,17 +1,18 @@
-header {
-  background: url(../img/griffes-head.png);
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 180px;
-  height: 30%;
-}
+/* Body page */
 body {
   background-color: white;
   overflow-x: hidden;
 }
-/* nav {
+
+/* Header elements */
+header {
+  height: 30%;
+}
+nav {
   padding: 0;
-} */
+}
+
+/* Main elements */
 main {
   padding: 0;
 }
@@ -31,17 +32,10 @@ section.actu-container {
 section .coach-container {
   padding: auto;
 }
+
+/* Footer */
 footer {
   position: relative;
   width: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    var(--yellow-color) 0%,
-    var(--yellow-color) 7px,
-    var(--blue-color) 7px,
-    var(--blue-color) 12px,
-    var(--main-color) 6px
-  );
-  color: #fff;
   padding: 40px 0;
 }
