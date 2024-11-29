@@ -355,3 +355,13 @@ footer {
 .copyright {
   text-align: center;
 }
+
+.repeated-background {
+  width: 100%;
+  height: 2000px;
+  background-image: url("img/ResNonVerbaInclinedOpacity.svg"), url("img/ResNonVerbaInclinedOpacity.svg");
+  background-repeat: repeat;
+  background-size: 170px 170px; /* Taille de l'image + espace entre elles */
+  background-position: 0 0, /* Première ligne commence normalement */ 85px 85px; /* Deuxième ligne est décalée à mi-gap */
+  filter: grayscale(100%);
+}
