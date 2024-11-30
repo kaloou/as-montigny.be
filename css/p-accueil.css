@@ -17,8 +17,8 @@
   flex-direction: row;
   position: relative;
   overflow: hidden;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: flex-start; /* Les éléments commencent à gauche */
+  align-items: center; /* Centre verticalement */
   max-width: 100vw;
   min-height: 250px;
   padding-top: 100px;
@@ -37,21 +37,206 @@
   width: 50vw;
   height: 40vw;
   margin-left: -1px;
-  position: relative;
+  position: relative; /* Reste dans le flux */
   box-shadow: 45px 0 80px -6px #00000036;
+}
+.pattern-overlay {
+  position: absolute; /* Permet de superposer l'image */
+  top: 50%; /* Centre verticalement */
+  left: 25%; /* Place la superposition au centre de l'image de gauche */
+  transform: translate(-50%, -50%); /* Corrige le décalage du centrage */
+  width: 25vw; /* Taille réduite pour différencier visuellement */
+  height: 24vw; /* Conserve les proportions */
+  filter: brightness(2) contrast(200%) saturate(0%);
+  z-index: 1; /* S'assure qu'elle est au-dessus de .pattern1 */
+  margin-right: 15%;
 }
 .new-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
-  height: 100%;
+  flex: 1; /* Prend l’espace restant */
+  height: 100%; /* Occupe toute la hauteur */
 }
-.resnonverba {
-  margin-top: 10%;
-  width: 70%;
-  height: auto;
-  max-height: 70%;
+.content {
+  text-align: end;
+  color: #333; /* Couleur par défaut du texte */
+  max-width: 80%; /* Limite la largeur du texte */
+}
+
+.content h1 {
+  font-family: "Futura Condensed Extra Bold";
+  font-size: 5vh; /* Taille du titre */
+  color: #000; /* Couleur du titre */
+  margin-bottom: 20px;
+  max-width: 28vh;
+}
+
+.content p {
+  font-size: 1.2rem; /* Taille du texte de description */
+  color: #555; /* Couleur du texte */
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 390px;
+}
+
+/* button */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Centre le contenu horizontalement */
+  background-color: transparent; /* Fond transparent de base */
+  color: black; /* Texte en noir par défaut */
+  padding: 12px 20px; /* Ajustement des marges pour un bouton équilibré */
+  font-size: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700; /* Police en gras */
+  letter-spacing: 0.05em; /* Espacement des lettres */
+  border: 2px solid #640a34; /* Bordure visible */
+  border-radius: 50px; /* Forme légèrement arrondie */
+  cursor: pointer;
+  text-decoration: none;
+  position: relative; /* Nécessaire pour le pseudo-élément */
+  overflow: hidden; /* Empêche le débordement visuel */
+  transition: all 0.3s ease; /* Animation fluide */
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* La largeur est animée au survol */
+  height: 100%;
+  background-color: #640a34; /* Couleur de fond au survol */
+  border-radius: 50px; /* Suit la forme arrondie du bouton */
+  transition: width 0.3s ease; /* Animation fluide de la largeur */
+  z-index: 0; /* Derrière le texte */
+}
+
+.cta span {
+  position: relative; /* Le texte est au-dessus du fond */
+  z-index: 1; /* Toujours visible devant */
+  transition: color 0.3s ease; /* Transition fluide pour la couleur */
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: black; /* Couleur de l'icône au repos */
+  stroke-width: 2;
+  transform: translateX(-5px); /* Décalage initial */
+  transition: all 0.3s ease; /* Animation fluide */
+}
+
+.cta:hover:before {
+  width: 100%; /* Le fond couvre tout le bouton */
+}
+
+.cta:hover span {
+  color: white; /* Texte devient blanc au survol */
+}
+
+.cta:hover svg {
+  stroke: white; /* Icône devient blanche au survol */
+  transform: translateX(0); /* Réinitialise le décalage */
+}
+
+.cta:active {
+  transform: scale(0.95); /* Effet de clic */
+}
+/* Menu */
+#menu.four {
+  transform: skew(-15deg) scale(1.6);
+}
+
+body.menu-active #menu.four {
+  animation: menu-4-appear 0.5s forwards;
+}
+
+@keyframes menu-4-appear {
+  0% {
+    translate: -200% 0;
+  }
+  100% {
+    translate: 0;
+  }
+}
+/* Overlay */
+.overlay {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  background: rgba(0 0 0 / 70%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+body.menu-active .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Menu Links */
+.links {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: grid;
+  place-items: center;
+  transition: 0.175s;
+}
+
+body.menu-active .links {
+  opacity: 1;
+  visibility: visible;
+}
+
+.links li a {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  color: #f9f9f9;
+  transition: 0.3s;
+}
+
+.links:hover a {
+  opacity: 0.5;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+
+body.menu-active .links li {
+  opacity: 1;
+  animation: appear 0.5s both;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* second */
@@ -84,6 +269,17 @@
   box-shadow: 45px 0 80px -6px #00000036;
   transform: scaleY(-1);
 }
+.pattern-overlay2 {
+  position: absolute; /* Permet de superposer l'image */
+  top: 50%; /* Centre verticalement */
+  left: 75%; /* Place la superposition au centre de l'image de gauche */
+  transform: translate(-50%, -50%); /* Corrige le décalage du centrage */
+  width: 25vw; /* Taille réduite pour différencier visuellement */
+  height: 24vw; /* Conserve les proportions */
+  filter: brightness(2) contrast(200%) saturate(0%);
+  z-index: 1; /* S'assure qu'elle est au-dessus de .pattern1 */
+  margin-right: 15%;
+}
 .text-wrap {
   flex-direction: row;
   justify-content: space-between;
@@ -103,63 +299,6 @@
 }
 /*bouton*/
 /* From Uiverse.io by alexmaracinaru */
-.cta {
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.cta:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b1dae7;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
-}
-
-.cta span {
-  position: relative;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #234567;
-}
-
-.cta svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #234567;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
-}
-
-.cta:hover:before {
-  width: 100%;
-  background: #b1dae7;
-}
-
-.cta:hover svg {
-  transform: translateX(0);
-}
-
-.cta:active {
-  transform: scale(0.95);
-}
 
 /*-----Actualités-----*/
 .actu-container {
