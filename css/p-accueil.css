@@ -11,7 +11,7 @@
 
 /*--Wraps--*/
 
-/* first */
+/* wrap1 */
 .wrap1 {
   display: flex;
   flex-direction: row;
@@ -63,7 +63,6 @@
   color: #333; /* Couleur par défaut du texte */
   max-width: 80%; /* Limite la largeur du texte */
 }
-
 .content h1 {
   font-family: "Futura Condensed Extra Bold";
   font-size: 5vh; /* Taille du titre */
@@ -71,7 +70,6 @@
   margin-bottom: 20px;
   max-width: 28vh;
 }
-
 .content p {
   font-size: 1.2rem; /* Taille du texte de description */
   color: #555; /* Couleur du texte */
@@ -100,7 +98,6 @@
   overflow: hidden; /* Empêche le débordement visuel */
   transition: all 0.3s ease; /* Animation fluide */
 }
-
 .cta:before {
   content: "";
   position: absolute;
@@ -113,13 +110,11 @@
   transition: width 0.3s ease; /* Animation fluide de la largeur */
   z-index: 0; /* Derrière le texte */
 }
-
 .cta span {
   position: relative; /* Le texte est au-dessus du fond */
   z-index: 1; /* Toujours visible devant */
   transition: color 0.3s ease; /* Transition fluide pour la couleur */
 }
-
 .cta svg {
   position: relative;
   top: 0;
@@ -132,57 +127,59 @@
   transform: translateX(-5px); /* Décalage initial */
   transition: all 0.3s ease; /* Animation fluide */
 }
-
 .cta:hover:before {
   width: 100%; /* Le fond couvre tout le bouton */
 }
-
 .cta:hover span {
   color: white; /* Texte devient blanc au survol */
 }
-
 .cta:hover svg {
   stroke: white; /* Icône devient blanche au survol */
   transform: translateX(0); /* Réinitialise le décalage */
 }
-
 .cta:active {
   transform: scale(0.95); /* Effet de clic */
 }
 /* Menu */
-#menu.four {
-  transform: skew(-15deg) scale(1.6);
+html.menu-active,
+body.menu-active {
+  overflow: hidden;
 }
-
-body.menu-active #menu.four {
-  animation: menu-4-appear 0.5s forwards;
-}
-
-@keyframes menu-4-appear {
-  0% {
-    translate: -200% 0;
-  }
-  100% {
-    translate: 0;
-  }
-}
-/* Overlay */
 .overlay {
   position: fixed;
   z-index: 1;
   inset: 0;
-  background: rgba(0 0 0 / 70%);
+  background: rgba(0 0 0/ 20%);
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
 }
-
 body.menu-active .overlay {
   opacity: 1;
   visibility: visible;
 }
-
-/* Menu Links */
+#menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f9f9f9;
+  background: rgba(0 0 0 / 90%);
+  transition-property: translate, opacity, visibility;
+  transition-duration: 0.3s;
+}
+body.menu-active #menu {
+  opacity: 1;
+  visibility: visible;
+}
 .links {
   position: fixed;
   z-index: 3;
@@ -198,12 +195,10 @@ body.menu-active .overlay {
   place-items: center;
   transition: 0.175s;
 }
-
 body.menu-active .links {
   opacity: 1;
   visibility: visible;
 }
-
 .links li a {
   position: relative;
   font-size: 24px;
@@ -214,20 +209,16 @@ body.menu-active .links {
   color: #f9f9f9;
   transition: 0.3s;
 }
-
 .links:hover a {
   opacity: 0.5;
 }
-
 .links a:hover {
   opacity: 1;
 }
-
 body.menu-active .links li {
   opacity: 1;
   animation: appear 0.5s both;
 }
-
 @keyframes appear {
   0% {
     opacity: 0;
@@ -238,8 +229,22 @@ body.menu-active .links li {
     transform: translateY(0);
   }
 }
+#menu.four {
+  transform: skew(-15deg) scale(1.6);
+}
+body.menu-active #menu.four {
+  animation: menu-4-appear 0.5s forwards;
+}
+@keyframes menu-4-appear {
+  0% {
+    translate: -200% 0;
+  }
+  100% {
+    translate: 0;
+  }
+}
 
-/* second */
+/* wrap2 */
 .wrap2 {
   display: flex;
   flex-direction: row;
@@ -297,56 +302,13 @@ body.menu-active .links li {
   display: flex;
   position: relative;
 }
-/*bouton*/
-/* From Uiverse.io by alexmaracinaru */
 
-/*-----Actualités-----*/
-.actu-container {
-  margin-bottom: 75px;
-}
-#actu {
-  margin-top: 100px;
-}
-.actu-container .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 4px;
-  max-width: 1000px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
-.actu-container .column {
-  flex: 30%;
-  max-width: 30%;
-  padding: 0 4px;
-  border-radius: 15px;
-}
-.actu-container .column .img {
-  margin-top: 8px;
-  vertical-align: middle;
-  border-radius: 15px;
-  padding: 5px;
-  overflow: hidden;
-}
-.actu-container .column .img img {
-  transition: transform 0.5s ease;
-  width: 100%;
-  border-radius: 15px;
-  display: flex;
-}
-.actu-container .column .img:hover img {
-  transform: scale(1.1);
-}
-.actu-container .column img:hover {
-  transform: scale(1.2) translate(-10%, -10%);
-  transition: transform 0.5s ease;
-}
+/*----News----*/
 
 /* Ovale étendu */
 .oval-shape {
   margin-top: 50vh;
-  width: 130vw; /* Largeur de 200% pour qu'elle dépasse des deux côtés */
+  width: 150vw; /* Largeur de 200% pour qu'elle dépasse des deux côtés */
   height: 100vh; /* Hauteur de 150% pour qu'elle soit plus grande que l'écran */
   display: flex;
   justify-content: center;
@@ -357,8 +319,8 @@ body.menu-active .links li {
   left: 50%; /* Centre horizontalement */
   transform: translate(-50%, -50%); /* Assure le centrage parfait */
   border-radius: 50%; /* Forme ovale */
+  background-image: url("../img/texture.jpg"); /* Image de fond */
 }
-
 /* Image ajustée */
 .img3 {
   width: 100%; /* Prend toute la largeur du conteneur */
@@ -368,13 +330,142 @@ body.menu-active .links li {
   transform: scaleX(1) scaleY(1);
   filter: brightness(0.5) saturate(1.5) hue-rotate(-10deg);
 }
+/* Grid layout (news)*/
+/* Encapsuler tout dans .grid-layout pour éviter de toucher à des éléments globaux */
+.grid-layout * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/*MATCH SCORES*/
+.grid-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes de même largeur */
+  grid-template-rows: repeat(4, 1fr); /* 4 lignes de même hauteur */
+  gap: 15px; /* Espacement entre les éléments */
+  width: 80vw; /* Largeur totale du grid */
+  height: 105vh; /* Hauteur totale du grid */
+  margin-top: 22vh;
+}
+
+/* Element styles */
+.grid-layout .item {
+  background-color: #ff9800;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em; /* Augmenter la taille du texte */
+  border-radius: 5px;
+  overflow: hidden; /* S'assure que rien ne dépasse du div */
+}
+
+/* Image inside the item */
+.grid-layout .item img {
+  object-fit: cover; /* L'image couvre l'élément sans déformer l'image */
+  width: 100%; /* L'image occupe toute la largeur du conteneur */
+  height: 100%; /* L'image occupe toute la hauteur du conteneur */
+  object-position: center; /* L'image est centrée dans le conteneur */
+}
+
+/* Spécification des tailles et positionnement des éléments */
+.grid-layout .item-1 {
+  grid-column: span 2; /* 2 colonnes */
+  grid-row: span 2; /* 2 lignes */
+}
+
+.grid-layout .item-2 {
+  grid-column: 3; /* 3e colonne */
+  grid-row: 1; /* 1ère ligne */
+}
+
+.grid-layout .item-3 {
+  grid-column: 4; /* 4e colonne */
+  grid-row: 1; /* 1ère ligne */
+}
+
+.grid-layout .item-4 {
+  grid-column: 3; /* 3e colonne */
+  grid-row: 2; /* 2e ligne */
+}
+
+.grid-layout .item-5 {
+  grid-column: 4; /* 4e colonne */
+  grid-row: 2; /* 2e ligne */
+}
+
+.grid-layout .item-6 {
+  grid-column: span 2; /* 2 colonnes */
+  grid-row: 3; /* 3e ligne */
+}
+
+.grid-layout .item-7 {
+  grid-column: 3 / span 2; /* 3e colonne, et s'étend sur 2 colonnes */
+  grid-row: 3; /* 3e ligne */
+}
+
+/* Media Query pour responsive */
+@media (max-width: 600px) {
+  .grid-layout .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes */
+    grid-template-rows: auto; /* Autres lignes avec hauteur automatique */
+    width: 40vh; /* S'adapte à la largeur de l'écran */
+    height: auto; /* Ajuste la hauteur en fonction des éléments */
+    margin-top: 0;
+  }
+
+  /* Réorganiser les éléments dans le nouveau grid */
+  .grid-layout .item-1 {
+    grid-column: span 2; /* Prend 2 colonnes */
+    grid-row: 1; /* Première ligne */
+  }
+
+  .grid-layout .item-2 {
+    grid-column: 1; /* 1ère colonne */
+    grid-row: 2; /* 2e ligne */
+  }
+
+  .grid-layout .item-3 {
+    grid-column: 2; /* 2e colonne */
+    grid-row: 2; /* 2e ligne */
+  }
+
+  .grid-layout .item-4 {
+    grid-column: 1; /* 1ère colonne */
+    grid-row: 3; /* 3e ligne */
+  }
+
+  .grid-layout .item-5 {
+    grid-column: 2; /* 2e colonne */
+    grid-row: 3; /* 3e ligne */
+  }
+
+  .grid-layout .item-6 {
+    grid-column: 1; /* 1ère colonne */
+    grid-row: 4; /* 4e ligne */
+  }
+
+  .grid-layout .item-7 {
+    grid-column: 2; /* 2e colonne */
+    grid-row: 4; /* 4e ligne */
+  }
+}
+/*----MATCH SCORES----*/
 .matchs {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin: 2rem;
+  margin-bottom: 20vh;
+  margin-top: -30vh;
 }
 
 .previous,
