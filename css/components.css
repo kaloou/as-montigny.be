@@ -147,6 +147,7 @@ footer {
     var(--blue-color) 12px,
     var(--main-color) 6px
   );
+  margin-top: 10vh;
 }
 
 /*--logo footer--*/

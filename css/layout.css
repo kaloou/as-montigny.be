@@ -1,12 +1,13 @@
 /* Body page */
 body {
-  background-color: white;
+  background: linear-gradient(to bottom, white, #f5f5f5);
   overflow-x: hidden;
 }
 
 /* Header elements */
 header {
   height: 30%;
+  background-color: white;
 }
 nav {
   padding: 0;
@@ -20,19 +21,12 @@ figure .banniere-container {
   padding: auto;
 }
 
-section .sponsors {
+section .wraps {
+  padding: 0;
+}
+section .matchs {
   padding: auto;
 }
-section .match-container {
-  padding: auto;
-}
-section.actu-container {
-  padding: auto;
-}
-section .coach-container {
-  padding: auto;
-}
-
 /* Footer */
 footer {
   position: relative;
