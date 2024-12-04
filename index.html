@@ -93,16 +93,16 @@
     <!--MAIN-->
     <main>
       <!-- banniere -->
-      <figure class="banniere-container">
+      <figure id="banniere-container">
         <img src="img/banner_new.png" alt="banniere" class="banner" />
       </figure>
 
-      <section class="wraps">
+      <section id="wraps">
         <!--wrap1-->
-        <div class="wrap1">
+        <div id="wrap1">
           <img src="img/texture2.jpg" class="pattern1" />
           <img src="img/ResNonverba2white.svg" class="pattern-overlay" />
-          <div class="new-box">
+          <div class="text-box">
             <div class="content">
               <h1>Plus qu'un club, une famille</h1>
               <p class="inter-light">
@@ -136,9 +136,8 @@
         </div>
 
         <!-- wrap2 -->
-        <div class="wrap2">
-          <img src="img/veo-psd.svg" class="pattern-overlay2" />
-          <div class="new-box">
+        <div id="wrap2">
+          <div class="text-box2">
             <div class="content">
               <h1>Un nouveau monde, plus de technologies.</h1>
               <p class="inter-light">
@@ -152,31 +151,16 @@
           </div>
 
           <img src="img/texture2.jpg" class="pattern2" alt="" />
+          <img src="img/veo-psd.svg" class="pattern-overlay2" />
         </div>
       </section>
 
-      <!--news-->
-      <!-- <div class="oval-shape">
-        <div class="grid-layout">
-          <div class="grid-container">
-            <div class="item item-1"><img src="img/actu5.jpg" alt="" /></div>
-            <div class="item item-2"><img src="img/actu-coach1.jpg" alt="" /></div>
-            <div class="item item-3"><img src="img/actu1.jpg" alt="" /></div>
-            <div class="item item-4"><img src="img/actu2.jpg" alt="" /></div>
-            <div class="item item-5"><img src="img/actu7.jpg" alt="" /></div>
-            <div class="item item-6"><img src="img/actu10.jpg" alt="" /></div>
-            <div class="item item-7"><img src="img/banner-autumn.jpg" alt="" /></div>
-          </div>
-        </div>
-      </div> -->
-
       <!-- matchs -->
-
-      <section class="matchs">
+      <section id="matchs">
         <h1>Calendrier</h1>
         <!-- Section des matchs précédents -->
 
-        <div class="previous">
+        <div id="previous">
           <h2>Dernier match</h2>
           <div class="titre-match">
             <h3>U11-R17 2EME TOUR</h3>
@@ -186,23 +170,21 @@
             <div class="match-summary">
               <div class="team-container">
                 <img
-                  src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09676.jpg"
+                  src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09537.jpg"
                   alt="Équipe A" />
-                <p>Équipe A</p>
+                <p>A.S. FONTAINOISE B</p>
               </div>
-              <span class="score">2 - 1</span>
+              <span class="score">1 - 2</span>
               <div class="team-container">
-                <img
-                  src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09579.jpg"
-                  alt="Équipe B" />
-                <p>Équipe B</p>
+                <img src="img/logo-as.png" alt="Équipe B" />
+                <p>AS MONTIGNY</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Section des matchs à venir -->
-        <div class="next">
+        <div id="next">
           <h2>Prochain match</h2>
           <div class="titre-match">
             <h3>Matchs à venir</h3>
@@ -210,43 +192,120 @@
           <div class="match-box">
             <div class="match-summary">
               <div class="team-container">
-                <img
-                  src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09676.jpg"
-                  alt="Équipe A" />
-                <p>Équipe A</p>
+                <img src="img/logo-as.png" alt="Équipe A" />
+                <p>AS MONTIGNY</p>
               </div>
-              <span class="score">2 - 1</span>
+              <span class="score-time">14 h 30</span>
               <div class="team-container">
                 <img
                   src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09579.jpg"
                   alt="Équipe B" />
-                <p>Équipe B</p>
+                <p>RACING CLUB MARCINELLE B</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="next">
+        <div id="classement">
           <h2>Classement</h2>
           <div class="titre-match">
-            <h3>Matchs à venir</h3>
+            <h3>Football : Hainaut - 4 Prov.G</h3>
           </div>
-          <div class="match-box">
-            <div class="match-summary">
-              <div class="team-container">
-                <img
-                  src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09676.jpg"
-                  alt="Équipe A" />
-                <p>Équipe A</p>
-              </div>
-              <span class="score">2 - 1</span>
-              <div class="team-container">
-                <img
-                  src="https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09579.jpg"
-                  alt="Équipe B" />
-                <p>Équipe B</p>
-              </div>
-            </div>
+
+          <div class="classement-box classement-scroll-container">
+            <table>
+              <tr class="team-one other-team">
+                <td class="number">1</td>
+                <td class="team-name">R.A.S. MONCEAU B</td>
+                <td class="match-play">10</td>
+                <td class="points">38</td>
+              </tr>
+              <tr class="team-two other-team">
+                <td class="number">2</td>
+                <td class="team-name">RACING CLUB MARCINELLE B</td>
+                <td class="match-play">10</td>
+                <td class="points">35</td>
+              </tr>
+              <tr class="team-one other-team">
+                <td class="number">3</td>
+                <td class="team-name">WSAC FLEURUS</td>
+                <td class="match-play">10</td>
+                <td class="points">31</td>
+              </tr>
+              <tr class="team-two our-team">
+                <td class="number">4</td>
+                <td class="team-name">AS MONTIGNY</td>
+                <td class="match-play">10</td>
+                <td class="points">28</td>
+              </tr>
+              <tr class="team-three other-team">
+                <td class="number">5</td>
+                <td class="team-name">ENTENTE CHATELET A</td>
+                <td class="match-play">10</td>
+                <td class="points">27</td>
+              </tr>
+              <tr class="team-four other-team">
+                <td class="number">6</td>
+                <td class="team-name">FC GERPINNES FLACHES A</td>
+                <td class="match-play">10</td>
+                <td class="points">22</td>
+              </tr>
+
+              <tr class="team-five other-team">
+                <td class="number">7</td>
+                <td class="team-name">CAROLO FOOTBALL CHARLEROI B</td>
+                <td class="match-play">10</td>
+                <td class="points">19</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">8</td>
+                <td class="team-name">FC COUGARS</td>
+                <td class="match-play">10</td>
+                <td class="points">15</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">9</td>
+                <td class="team-name">AS LIONS</td>
+                <td class="match-play">10</td>
+                <td class="points">14</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">10</td>
+                <td class="team-name">SC PANTHERS</td>
+                <td class="match-play">10</td>
+                <td class="points">13</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">11</td>
+                <td class="team-name">OLYMPIC WOLVES</td>
+                <td class="match-play">10</td>
+                <td class="points">12</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">12</td>
+                <td class="team-name">RED HAWKS</td>
+                <td class="match-play">10</td>
+                <td class="points">11</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">13</td>
+                <td class="team-name">BLUE SHARKS</td>
+                <td class="match-play">10</td>
+                <td class="points">10</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">14</td>
+                <td class="team-name">GOLDEN EAGLES</td>
+                <td class="match-play">10</td>
+                <td class="points">9</td>
+              </tr>
+              <tr class="team-six other-team">
+                <td class="number">15</td>
+                <td class="team-name">BLACK BEARS</td>
+                <td class="match-play">10</td>
+                <td class="points">8</td>
+              </tr>
+            </table>
           </div>
         </div>
       </section>
@@ -376,7 +435,7 @@
       <!--bottom footer -->
 
       <div class="bottom-footer">
-        <p class="copyright">Copyright &copy; 2023 Lucas Paludetto</p>
+        <p class="copyright">Copyright &copy; 2024 Lucas Paludetto</p>
       </div>
     </footer>
   </body>

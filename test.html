@@ -3,150 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid Layout</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Classement Foot</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 8px;
+      }
+      .stats {
+        font-size: 16px; /* Taille des chiffres principaux */
+        line-height: 1.2; /* Espacement vertical pour lisibilité */
+      }
+      .stats sup {
+        font-size: 12px; /* Taille des exposants */
+        color: green; /* Couleur pour victoires */
+      }
+      .stats sub {
+        font-size: 12px; /* Taille des indices */
+        color: red; /* Couleur pour défaites */
+      }
+      .stats span {
+        font-size: 12px; /* Taille des nuls */
+        color: blue; /* Couleur pour différencier les nuls */
+      }
+    </style>
   </head>
   <body>
-    <div class="grid-layout">
-      <div class="grid-container">
-        <div class="item item-1"><img src="img/actu-coach1.jpg" alt="" /></div>
-        <div class="item item-2"><img src="img/actu-coach1.jpg" alt="" /></div>
-        <div class="item item-3">3</div>
-        <div class="item item-4">4</div>
-        <div class="item item-5">5</div>
-        <div class="item item-6"><img src="img/actu-coach1.jpg" alt="" /></div>
-        <div class="item item-7"><img src="img/banner-autumn.jpg" alt="" /></div>
-      </div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Équipe</th>
+          <th>Statistiques</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Équipe A</td>
+          <td>
+            <div class="stats">10<sup>V</sup> 2<sub>D</sub> 3<span>N</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Équipe B</td>
+          <td>
+            <div class="stats">8<sup>V</sup> 5<sub>D</sub> 1<span>N</span></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
-
-<style>
-  /* Encapsuler tout dans .grid-layout pour éviter de toucher à des éléments globaux */
-  .grid-layout * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .grid-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f3f3f3;
-    font-family: Arial, sans-serif;
-  }
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de même largeur */
-    grid-template-rows: repeat(4, 1fr); /* 4 lignes de même hauteur */
-    gap: 15px; /* Espacement entre les éléments */
-    width: 600px; /* Largeur totale du grid */
-    height: 600px; /* Hauteur totale du grid */
-  }
-
-  /* Element styles */
-  .grid-layout .item {
-    background-color: #ff9800;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em; /* Augmenter la taille du texte */
-    border-radius: 5px;
-    overflow: hidden; /* S'assure que rien ne dépasse du div */
-  }
-
-  /* Image inside the item */
-  .grid-layout .item img {
-    object-fit: cover; /* L'image couvre l'élément sans déformer l'image */
-    width: 100%; /* L'image occupe toute la largeur du conteneur */
-    height: 100%; /* L'image occupe toute la hauteur du conteneur */
-    object-position: center; /* L'image est centrée dans le conteneur */
-  }
-
-  /* Spécification des tailles et positionnement des éléments */
-  .grid-layout .item-1 {
-    grid-column: span 2; /* 2 colonnes */
-    grid-row: span 2; /* 2 lignes */
-  }
-
-  .grid-layout .item-2 {
-    grid-column: 3; /* 3e colonne */
-    grid-row: 1; /* 1ère ligne */
-  }
-
-  .grid-layout .item-3 {
-    grid-column: 4; /* 4e colonne */
-    grid-row: 1; /* 1ère ligne */
-  }
-
-  .grid-layout .item-4 {
-    grid-column: 3; /* 3e colonne */
-    grid-row: 2; /* 2e ligne */
-  }
-
-  .grid-layout .item-5 {
-    grid-column: 4; /* 4e colonne */
-    grid-row: 2; /* 2e ligne */
-  }
-
-  .grid-layout .item-6 {
-    grid-column: span 2; /* 2 colonnes */
-    grid-row: 3; /* 3e ligne */
-  }
-
-  .grid-layout .item-7 {
-    grid-column: 3 / span 2; /* 3e colonne, et s'étend sur 2 colonnes */
-    grid-row: 3; /* 3e ligne */
-  }
-
-  /* Media Query pour responsive */
-  @media (max-width: 600px) {
-    .grid-layout .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* 2 colonnes */
-      grid-template-rows: auto; /* Autres lignes avec hauteur automatique */
-      width: 100%; /* S'adapte à la largeur de l'écran */
-      height: auto; /* Ajuste la hauteur en fonction des éléments */
-    }
-
-    /* Réorganiser les éléments dans le nouveau grid */
-    .grid-layout .item-1 {
-      grid-column: span 2; /* Prend 2 colonnes */
-      grid-row: 1; /* Première ligne */
-    }
-
-    .grid-layout .item-2 {
-      grid-column: 1; /* 1ère colonne */
-      grid-row: 2; /* 2e ligne */
-    }
-
-    .grid-layout .item-3 {
-      grid-column: 2; /* 2e colonne */
-      grid-row: 2; /* 2e ligne */
-    }
-
-    .grid-layout .item-4 {
-      grid-column: 1; /* 1ère colonne */
-      grid-row: 3; /* 3e ligne */
-    }
-
-    .grid-layout .item-5 {
-      grid-column: 2; /* 2e colonne */
-      grid-row: 3; /* 3e ligne */
-    }
-
-    .grid-layout .item-6 {
-      grid-column: 1; /* 1ère colonne */
-      grid-row: 4; /* 4e ligne */
-    }
-
-    .grid-layout .item-7 {
-      grid-column: 2; /* 2e colonne */
-      grid-row: 4; /* 4e ligne */
-    }
-  }
-</style>
