@@ -317,7 +317,6 @@ body.menu-active #menu.four {
   transform: translate(50%, -50%); /* Centre verticalement et ajuste horizontalement */
   width: 33vw; /* Prend 100% de la largeur de l'image parent */
   height: 50%;
-  filter: brightness(2) contrast(200%) saturate(0%);
   z-index: 1;
 }
 
@@ -346,7 +345,7 @@ body.menu-active #menu.four {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-33%, -33%);
+    transform: translate(-30%, -30%);
     width: 40vw;
     height: 80%;
   }
