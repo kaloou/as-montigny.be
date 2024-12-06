@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="../img/logo-as.png" />
 
     <!--javascript-->
-    <script defer src="../javascript/main.js"></script>
+    <script defer src="../javascript/events.js"></script>
     <!--css-->
     <link rel="stylesheet" href="../css/p-events.css" />
     <link rel="stylesheet" href="../css/base.css" />
@@ -89,76 +89,33 @@
       </nav>
     </header>
 
-    <!-- contenu -->
+    <main>
+      <div class="filtrer-image">
+        <h2 class="titre">Evenements <span>du club</span></h2>
 
-    <!-- ------------------ -->
+        <ul>
+          <li class="active">Tout</li>
+          <li>Recherche</li>
+          <li>Coach</li>
+          <li>Club</li>
+          <li>Tournoi</li>
+        </ul>
 
-    <div class="filtrer-image">
-      <h2 class="titre">Evenements <span>du club</span></h2>
-
-      <ul>
-        <li class="active">Tout</li>
-        <li>Recherche</li>
-        <li>Coach</li>
-        <li>Club</li>
-        <li>Tournoi</li>
-      </ul>
-
-      <div class="product">
-        <div id="recherche-container">
-          <img src="../img/actu8.jpg" data-filter="recherche" />
+        <div class="product">
+          <div id="recherche-container">
+            <img src="../img/actu8.jpg" data-filter="recherche" />
+          </div>
+          <img src="../img/actu-coach1.jpg" data-filter="coach" />
+          <img src="../img/actu-coach2.jpg" data-filter="coach" />
+          <img src="../img/actu10.jpg" data-filter="recherche" />
+          <img src="../img/actu5.jpg" data-filter="club" />
+          <img src="../img/actu7.jpg" data-filter="tournoi" />
+          <img src="../img/actu2.jpg" data-filter="recherche" />
+          <img src="../img/actu3.jpg" data-filter="recherche" />
+          <img src="../img/actu1.jpg" data-filter="club" />
         </div>
-        <img src="../img/actu-coach1.jpg" data-filter="coach" />
-        <img src="../img/actu-coach2.jpg" data-filter="coach" />
-        <img src="../img/actu10.jpg" data-filter="recherche" />
-        <img src="../img/actu5.jpg" data-filter="club" />
-        <img src="../img/actu7.jpg" data-filter="tournoi" />
-        <img src="../img/actu2.jpg" data-filter="recherche" />
-        <img src="../img/actu3.jpg" data-filter="recherche" />
-        <img src="../img/actu1.jpg" data-filter="club" />
       </div>
-    </div>
-
-    <script>
-      const liItem = document.querySelectorAll("ul li");
-      const imgItem = document.querySelectorAll(".product img");
-
-      liItem.forEach((li) => {
-        li.onclick = function () {
-          // Active
-          liItem.forEach((li) => {
-            li.className = "";
-          });
-          li.className = "active";
-
-          // Filter
-          const value = li.textContent;
-          imgItem.forEach((img) => {
-            img.style.display = "none";
-            if (value.toLowerCase() === "tout" || img.getAttribute("data-filter") === value.toLowerCase()) {
-              img.style.display = "block";
-            }
-          });
-
-          // Show all elements
-          if (value.toLowerCase() === "tout") {
-            imgItem.forEach((img) => {
-              img.style.display = "block";
-            });
-          }
-        };
-      });
-    </script>
-
-    <h2 class="titre">Annonces <span>du club</span></h2>
-
-    <div class="event">
-      <img src="../img/actu4.jfif" class="img-event" alt="" />
-
-      <img src="../img/actu9.jfif" class="img-event" alt="" />
-
-      <img src="../img/actu11.jpg" class="img-event" alt="" />
-    </div>
+    </main>
 
     <!----FOOTER---->
     <footer>

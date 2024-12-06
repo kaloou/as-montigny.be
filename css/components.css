@@ -1,5 +1,4 @@
 /*----HEADER----*/
-
 header {
   background: url(../img/griffes-head.png);
   background-repeat: no-repeat;
@@ -132,11 +131,11 @@ header {
   color: var(--main-color);
 }
 .navcontainer .main-point:hover::after {
-  width: 65%; /* Largeur de la barre quand elle est complètement étendue */
+  width: 65%;
   left: 50%;
 }
 
-/*----Footer----*/
+/*----FOOTER----*/
 footer {
   color: #fff;
   background-image: linear-gradient(
@@ -299,7 +298,7 @@ footer {
   text-align: center;
 }
 
-/*--Titles--*/
+/*--TITLES--*/
 .titre {
   font-family: "Roboto" "Poppins" "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -350,13 +349,13 @@ footer {
   font-style: normal;
 }
 
-/* templates for a repeated background */
+/*--RES NON VERBA BG*/
 .repeated-background {
   width: 100%;
   height: 2000px;
   background-image: url("img/ResNonVerbaInclinedOpacity.svg"), url("img/ResNonVerbaInclinedOpacity.svg");
   background-repeat: repeat;
-  background-size: 170px 170px; /* Taille de l'image + espace entre elles */
-  background-position: 0 0, /* Première ligne commence normalement */ 85px 85px; /* Deuxième ligne est décalée à mi-gap */
+  background-size: 170px 170px;
+  background-position: 0 0, 85px 85px;
   filter: grayscale(100%);
 }

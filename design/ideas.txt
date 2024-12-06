@@ -114,3 +114,13 @@ Franck BIRETTE,
 responsable administratif
 Arrivée lors de la saison 2022/23, Franck s'est directement signalé par son sérieux et sa rigueur. 
 rafj@asmontigny.be
+
+planning ideas :
+- ajouter une loupe
+- ajouter downoald option
+
+overlay devenir griffon :
+- ajouter une forme de griffe ou mascotte
+
+main page
+- faire apparaittre les texte au scroll

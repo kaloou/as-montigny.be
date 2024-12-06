@@ -90,7 +90,7 @@
     flex: 1 1 100%; /* L'image prend toute la largeur */
     max-width: 80%; /* Ajuste la largeur maximale */
     height: 70vh;
-    margin-left: 0; /* Supprime la marge gauche */
+    margin-left: 0; /* Supprimgite la marge gauche */
   }
   .pattern-overlay {
     position: absolute;

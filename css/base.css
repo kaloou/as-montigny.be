@@ -11,6 +11,7 @@
 
 :root {
   --main-color: #640a34;
+  --main-color2: #6b0101;
   --text-color: black;
   --blue-color: #4c8cc6;
   --yellow-color: #fadf00;
@@ -22,13 +23,12 @@
   --warning: #e9bd0c;
   --info: #3498db;
 }
-
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: "Inter", "Roboto", "Poppins", sans-serif;
+  font-family: "", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
   text-align: justify;
