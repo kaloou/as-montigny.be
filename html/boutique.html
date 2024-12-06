@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/responsive.css" />
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -89,370 +89,279 @@
       </nav>
     </header>
 
-<ul>
-    <li>
-      <i class='bx bxs-shopping-bag ' id="cart-icon">panier</i>
-    </li>
+    <ul>
+      <li>
+        <i class="bx bxs-shopping-bag" id="cart-icon">panier</i>
+      </li>
 
-    <li>
-      <button class='loginbtn main-point'
-       onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">
-        <a class="maint-point">Se connecter</a>
-      </button>
-    </li>
+      <li>
+        <button
+          class="loginbtn main-point"
+          onclick="document.getElementById('login-form').style.display='block'"
+          style="width: auto">
+          <a class="maint-point">Se connecter</a>
+        </button>
+      </li>
+    </ul>
 
+    <!-- Cart -->
+    <div class="cart">
+      <h2 class="cart-title">Votre Panier</h2>
 
-  </ul>
-</div>
-
-
-<!-- -------------------------------------- -->
-           
-
-           <!-- Cart -->
-           <div class="cart">
-
-            <h2 class="cart-title">Votre Panier</h2>
-
-            <!-- Content -->
-            <div class="cart-content">
-
-          
-            </div>
-
-            <!-- Total -->
-            <div class="total">
-                <div class="total-title">Total</div>
-                <div class="total-price">0€</div>
-            </div>
-
-            <!-- buy button -->
-            <button type="button" class="btn-buy">Acheter mainteant</button>
-              
-            <!-- Cart Close -->
-            <i class='bx bx-x' id="close-cart"></i>
-
+      <!-- Content -->
+      <div class="cart-content">
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">0€</div>
         </div>
-</div>
 
+        <!-- buy button -->
+        <button type="button" class="btn-buy">Acheter mainteant</button>
 
-      
-        <!-- login page -->
-  <div id='login-form' class='login-page'>
-
-       <div class="form-box">
-        <!-- Boutons -->
-        <button class="hide-login-btn" onclick="hideLoginForm()"><i class='bx bx-x'></i></button>
-
-      <div class='button-box'>
-          <div id='btn'></div>
-          <button type='button' onclick='login()' class='toggle-btn'>Login</button>
-          <button type='button' onclick='register()' class='toggle-btn'>Inscription</button>
+        <!-- Cart Close -->
+        <i class="bx bx-x" id="close-cart"></i>
       </div>
-
-      <!-- connexion -->
-      <form id='login' class='input-group-login' action="#" method="post">
-
-          <input type='text'  name='email' class='input-field' placeholder='Email Id' required>
-          <input type='password' name='mdp'class='input-field' placeholder='Enter Password'required>
-          <input type='checkbox' class='check-box'><span>Remember Password</span>
-          <button type='submit' class='submit-btn'>Se connecter</button>
-
-      </form>
-
-      <!-- inscription -->
-      <form id='register' class='input-group-register' action="inscription.php" method="post">
-
-          <input type='text' name="prenom" class='input-field' placeholder='Prénom'  required>
-          <input type='text' name="nom" class='input-field' placeholder='Nom'  required>
-          <input type='email' name="email" class='input-field' placeholder="Email"  required>
-          <input type='password' name='mdp' class='input-field' placeholder='mot de passe'  required>
-          <input type='password' name='confirmPassword' class='input-field' placeholder='Confirmer mot de passe'  required>
-          <button type='submit' class='submit-btn'>S'inscrire</button>
-
-      </form>
-
     </div>
-  </div>
 
-            <script>
-                var x=document.getElementById('login');
-                var y=document.getElementById('register');
-                var z=document.getElementById('btn');
-                function register()
-                {
-                x.style.left='-400px';
-                y.style.left='50px';
-                z.style.left='110px';
-                }
-                function login()
-                {
-                x.style.left='50px';
-                y.style.left='450px';
-                z.style.left='0px';
-                }
-                //------------------------
-                var modal = document.getElementById('login-form');
-                window.onclick = function(event) 
-                {
-                if (event.target == modal) 
-                {
-                    modal.style.display = "none";
-                }
-                }
+    <!-- login page -->
+    <div id="login-form" class="login-page">
+      <div class="form-box">
+        <!-- Boutons -->
+        <button class="hide-login-btn" onclick="hideLoginForm()"><i class="bx bx-x"></i></button>
 
-                function hideLoginForm() {
-                var loginForm = document.getElementById('login-form');
-                loginForm.style.display = 'none';
-                }
-            </script>
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" onclick="login()" class="toggle-btn">Login</button>
+          <button type="button" onclick="register()" class="toggle-btn">Inscription</button>
+        </div>
 
+        <!-- connexion -->
+        <form id="login" class="input-group-login" action="#" method="post">
+          <input type="text" name="email" class="input-field" placeholder="Email Id" required />
+          <input type="password" name="mdp" class="input-field" placeholder="Enter Password" required />
+          <input type="checkbox" class="check-box" /><span>Remember Password</span>
+          <button type="submit" class="submit-btn">Se connecter</button>
+        </form>
 
-<!-- shop -->
-<div id="container-boutique">
-<section class="shop container">
-<h2 class="titre">Notre<span> Boutique</span></h2>
+        <!-- inscription -->
+        <form id="register" class="input-group-register" action="inscription.php" method="post">
+          <input type="text" name="prenom" class="input-field" placeholder="Prénom" required />
+          <input type="text" name="nom" class="input-field" placeholder="Nom" required />
+          <input type="email" name="email" class="input-field" placeholder="Email" required />
+          <input type="password" name="mdp" class="input-field" placeholder="mot de passe" required />
+          <input type="password" name="confirmPassword" class="input-field" placeholder="Confirmer mot de passe" required />
+          <button type="submit" class="submit-btn">S'inscrire</button>
+        </form>
+      </div>
+    </div>
 
-    <!-- content -->
+    <!-- shop -->
+    <div id="container-boutique">
+      <section class="shop container">
+        <h2 class="titre">Notre<span> Boutique</span></h2>
+
+        <!-- content -->
         <div class="shop-content">
-        <!-- Box 1 -->
-        <div class="product-box">
-
-            <img src="../img/boutique-VESTE A CAPUCHON CHAMP.jpg" alt="" class="product-img">
+          <!-- Box 1 -->
+          <div class="product-box">
+            <img src="../img/boutique-veste_capuche.jpg" alt="" class="product-img" />
             <h2 class="product-title">Veste à capuchon</h2>
             <span class="price">25€</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-
-         </div>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
           <!-- Box 2 -->
           <div class="product-box">
-
-            <img src="../img/boutique-T-Shirt Champ.jpg" alt="" class="product-img">
+            <img src="../img/boutique-T-Shirt.jpg" alt="" class="product-img" />
             <h2 class="product-title">T-shirt champ</h2>
             <span class="price">15€</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-
-         </div>
-            <!-- Box 3 -->
-            <div class="product-box">
-
-                <img src="../img/boutique-POLO CHAMP 2.0.jpg" alt="" class="product-img">
-                <h2 class="product-title">Polo champ</h2>
-                <span class="price">17.5€</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-
-             </div>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 3 -->
+          <div class="product-box">
+            <img src="../img/boutique-polo.jpg" alt="" class="product-img" />
+            <h2 class="product-title">Polo champ</h2>
+            <span class="price">17.5€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
           <!-- Box 4 -->
           <div class="product-box">
-
-            <img src="../img/boutique-PANTALON POLYESTER.jpg" alt="" class="product-img">
+            <img src="../img/boutique-training.jpg" alt="" class="product-img" />
             <h2 class="product-title">Training</h2>
             <span class="price">25€</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-
-         </div>
-            <!-- Box 5 -->
-            <div class="product-box">
-
-                <img src="../img/boutique-JAKO Veste coach Team.png" class="product-img">
-                <h2 class="product-title">Veste Coach Black</h2>
-                <span class="price">60€</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-
-             </div>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 5 -->
+          <div class="product-box">
+            <img src="../img/boutique-veste_coach.png" class="product-img" />
+            <h2 class="product-title">Veste Coach Black</h2>
+            <span class="price">60€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
           <!-- Box 6 -->
           <div class="product-box">
-
-            <img src="../img/maillot1.png" alt="img/boutique-SWEAT CHAMP 2.0.jpg" class="product-img">
+            <img src="../img/maillot1.png" class="product-img" />
             <h2 class="product-title">Maillot extérieur</h2>
             <span class="price">20€</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-
-         </div>
-             <!-- Box 7 -->
-             <div class="product-box">
-
-                <img src="../img/boutique-T-shirt Club-prenom.png"alt="" class="product-img">
-                <h2 class="product-title">T-shirt prenom</h2>
-                <span class="price">15€</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-
-             </div>
-                 <!-- Box 8 -->
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 7 -->
           <div class="product-box">
-
-            <img src="../img/boutique-T-shirt Club-maman.png" alt="" class="product-img">
+            <img src="../img/boutique-T-shirt_prenom.png" alt="" class="product-img" />
+            <h2 class="product-title">T-shirt prenom</h2>
+            <span class="price">15€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 8 -->
+          <div class="product-box">
+            <img src="../img/boutique-maman1.png" alt="" class="product-img" />
             <h2 class="product-title">T-Shirt maman</h2>
             <span class="price">15€</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 9 -->
+          <div class="product-box">
+            <img src="../img/boutique-Kit_Training.jpg" alt="" class="product-img" />
+            <h2 class="product-title">Kit Training</h2>
+            <span class="price">45€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 10-->
+          <div class="product-box">
+            <img src="../img/boutique-veste.jpg" alt="" class="product-img" />
+            <h2 class="product-title">Veste softshell</h2>
+            <span class="price">39€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 11 -->
+          <div class="product-box">
+            <img src="../img/boutique-kit_Match2.png" alt="" class="product-img" />
+            <h2 class="product-title">kit Match</h2>
+            <span class="price">45€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+          <!-- Box 12 -->
+          <div class="product-box">
+            <img src="../img/boutique-sweat.jpg" alt="" class="product-img" />
+            <h2 class="product-title">Sweat Champ</h2>
+            <span class="price">25€</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+          </div>
+        </div>
+      </section>
+    </div>
 
-         </div>
-         <!-- Box 9 -->
-         <div class="product-box">
+    <div class="body">
+      <ul class="notifications"></ul>
 
-          <img src="../img/boutique-Kit Training.jpg" alt="" class="product-img">
-          <h2 class="product-title">Kit Training</h2>
-          <span class="price">45€</span>
-          <i class='bx bx-shopping-bag add-cart'></i>
+      <div class="buttons" style="display: none">
+        <button class="btn" id="success">Success</button>
+        <button class="btn" id="error">Error</button>
+        <button class="btn" id="warning">Warning</button>
+        <button class="btn" id="info">Info</button>
+      </div>
+    </div>
 
-       </div>
-<!-- Box 10-->
-       <div class="product-box">
+    <!--------Footer---------->
+    <footer>
+      <div class="logocontainer-footer">
+        <a href="../index.html">
+          <img src="../img/logo.png" id="logo-footer" alt="logo" />
+        </a>
+      </div>
 
-        <img src="../img/boutique-Veste softshell light.jpg" alt="" class="product-img">
-        <h2 class="product-title">Veste softshell</h2>
-        <span class="price">39€</span>
-        <i class='bx bx-shopping-bag add-cart'></i>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>
+            À Propos
+            <hr class="hr-footer-1" />
+          </h3>
 
-     </div>
-<!-- Box 11 -->
-     <div class="product-box">
-
-      <img src="../img/boutique-Kit Match2.png" alt="" class="product-img">
-      <h2 class="product-title">kit Match</h2>
-      <span class="price">45€</span>
-      <i class='bx bx-shopping-bag add-cart'></i>
-
-   </div>
-<!-- Box 12 -->
-   <div class="product-box">
-
-    <img src="../img/boutique-SWEAT CHAMP 2.0.jpg" alt="" class="product-img">
-    <h2 class="product-title">Sweat Champ</h2>
-    <span class="price">25€</span>
-    <i class='bx bx-shopping-bag add-cart'></i>
-
- </div>
-
+          <p>
+            L'AS Montigny est un club de football amateur fondé en 1985 et situé à Montigny-le-tilleul, à Charleroi. Notre
+            club a pour objectif de promouvoir le football amateur et de donner l'opportunité à tous les passionnés de ce
+            sport de jouer dans un environnement convivial.
+          </p>
         </div>
 
-</section>
-</div>
+        <div class="footer-section-small">
+          <h3>
+            Equipes
+            <hr class="hr-footer-2" />
+          </h3>
 
+          <ul class="liens-footer">
+            <li><a href="kids.html">kids</a></li>
+            <li><a href="jeunes.html">jeunes</a></li>
+            <li><a href="premiere.html">Premiere</a></li>
+            <li><a href="senior.html">Senior</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-section-small">
+          <h3>
+            Club
+            <hr class="hr-footer-3" />
+          </h3>
 
+          <ul class="liens-footer">
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="histoire.html">Histoire</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="projet.html">Projet</a></li>
+          </ul>
+        </div>
 
-<div class="body">
+        <div class="footer-section">
+          <h3>
+            Contact
+            <hr class="hr-footer-2" />
+          </h3>
 
-  <ul class="notifications"></ul>
+          <p>
+            <img src="../img/icon-localisation.png" class="icon-footer" />
+            Rue Bois Frion 109, 6110 Montigny-le-Tilleul
+          </p>
+          <p>
+            <img src="../img/icon-tel.png" class="icon-footer" alt="" />
+            0495/282992
+          </p>
+          <p>
+            <img src="../img/icon-mail.png" class="icon-footer" alt="" />
+            michael.dupont@outlook.com
+          </p>
+          <p>
+            <img src="../img/icon-horraire.png" alt="" class="icon-footer" />
+            9H / 19H
+          </p>
+        </div>
+      </div>
 
-  <div class="buttons" style="display:none;">
-    <button class="btn" id="success">Success</button>
-    <button class="btn" id="error">Error</button>
-    <button class="btn" id="warning">Warning</button>
-    <button class="btn" id="info">Info</button>
-  </div>
+      <!-- Social icon -->
 
-</div>
+      <div class="social-icon-container">
+        <a href="https://www.instagram.com/as_montigny/?hl=fr" class="social-icon">
+          <img src="../img/logo-instagram.png" class="icon-taille" alt="" />
+        </a>
 
+        <a href="https://www.facebook.com/footmontigny" class="social-icon">
+          <img src="../img/logo-facebook.png" class="icon-taille" alt="" />
+        </a>
 
+        <a href="https://goo.gl/maps/GkPM55x6QD1F4kCQ7" class="social-icon">
+          <img src="../img/logo-google.png" class="icon-taille" alt="" />
+        </a>
 
+        <a href="https://youtube.com/@asmontigny2175" class="social-icon">
+          <img src="../img/logo-youtube.png" class="icon-taille" alt="" />
+        </a>
+      </div>
 
+      <!--bottom footer -->
 
-<!--------Footer---------->
-<footer>
-  <div class="logocontainer-footer">
-    <a href="../index.html">
-      <img src="../img/logo.png" id="logo-footer" alt="logo" />
-    </a>
-  </div>
-
-  <div class="footer-container">
-    <div class="footer-section">
-      <h3>
-        À Propos
-        <hr class="hr-footer-1" />
-      </h3>
-
-      <p>
-        L'AS Montigny est un club de football amateur fondé en 1985 et situé à Montigny-le-tilleul, à Charleroi. Notre
-        club a pour objectif de promouvoir le football amateur et de donner l'opportunité à tous les passionnés de ce
-        sport de jouer dans un environnement convivial.
-      </p>
-    </div>
-
-    <div class="footer-section-small">
-      <h3>
-        Equipes
-        <hr class="hr-footer-2" />
-      </h3>
-
-      <ul class="liens-footer">
-        <li><a href="kids.html">kids</a></li>
-        <li><a href="jeunes.html">jeunes</a></li>
-        <li><a href="premiere.html">Premiere</a></li>
-        <li><a href="senior.html">Senior</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section-small">
-      <h3>
-        Club
-        <hr class="hr-footer-3" />
-      </h3>
-
-      <ul class="liens-footer">
-        <li><a href="boutique.html">Boutique</a></li>
-        <li><a href="histoire.html">Histoire</a></li>
-        <li><a href="sponsor.html">Sponsor</a></li>
-        <li><a href="projet.html">Projet</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h3>
-        Contact
-        <hr class="hr-footer-2" />
-      </h3>
-
-      <p>
-        <img src="../img/icon-localisation.png" class="icon-footer" />
-        Rue Bois Frion 109, 6110 Montigny-le-Tilleul
-      </p>
-      <p>
-        <img src="../img/icon-tel.png" class="icon-footer" alt="" />
-        0495/282992
-      </p>
-      <p>
-        <img src="../img/icon-mail.png" class="icon-footer" alt="" />
-        michael.dupont@outlook.com
-      </p>
-      <p>
-        <img src="../img/icon-horraire.png" alt="" class="icon-footer" />
-        9H / 19H
-      </p>
-    </div>
-  </div>
-
-  <!-- Social icon -->
-
-  <div class="social-icon-container">
-    <a href="https://www.instagram.com/as_montigny/?hl=fr" class="social-icon">
-      <img src="../img/logo-instagram.png" class="icon-taille" alt="" />
-    </a>
-
-    <a href="https://www.facebook.com/footmontigny" class="social-icon">
-      <img src="../img/logo-facebook.png" class="icon-taille" alt="" />
-    </a>
-
-    <a href="https://goo.gl/maps/GkPM55x6QD1F4kCQ7" class="social-icon">
-      <img src="../img/logo-google.png" class="icon-taille" alt="" />
-    </a>
-
-    <a href="https://youtube.com/@asmontigny2175" class="social-icon">
-      <img src="../img/logo-youtube.png" class="icon-taille" alt="" />
-    </a>
-  </div>
-
-  <!--bottom footer -->
-
-  <div class="bottom-footer">
-    <p class="copyright">Copyright &copy; 2023 Lucas Paludetto</p>
-  </div>
-</footer>
-</body>
+      <div class="bottom-footer">
+        <p class="copyright">Copyright &copy; 2023 Lucas Paludetto</p>
+      </div>
+    </footer>
+  </body>
 </html>
-
-                         
-  
-
