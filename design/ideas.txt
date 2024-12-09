@@ -75,7 +75,7 @@ U19
 Seniors a + b
 Vétérans (en amical)
 23 équipes pour plus de 345 joueurs et 53 membres de staff. 
---
+--Equipe Page--
 Les jeunes
 Le coeur du projet de l'AS Montigny, les jeunes sont l'avenir du club. C'est sur eux que le club mise pour assurer le futur! 
 Les seniors 
@@ -83,8 +83,6 @@ Une équipe première doit motiver les jeunes par l’exemple, créer une fiert�
 Elle doit montrer la voie !
 Les vétérans
 Une équipe vétérans offre aux plus de 35 ans une occasion de s'amuser, de rester en forme et de partager leur expérience avec les plus jeunes.
---
-ajouter organigrame page voir site
 --
 ajouter volontariat voir site
 --
@@ -124,3 +122,6 @@ overlay devenir griffon :
 
 main page
 - faire apparaittre les texte au scroll
+
+contact page
+- ajouter coach image/comité/etc
