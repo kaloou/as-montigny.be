@@ -36,19 +36,19 @@ img-container:hover img {
 }
 
 #organigramme p {
-  width: 70%;
-  margin-left: 30vh;
+  width: 55%;
+  margin: 5vh auto;
 }
 
 /*-----Coach-----*/
 .coach-container {
-  height: 800px;
   width: 100%;
   background: url(../img/banner-coach.JPG);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  margin-top: 10vh;
 }
 .wrapper {
   margin: 0 auto;
@@ -122,7 +122,7 @@ img-container:hover img {
   flex-direction: column;
   border-radius: 30px;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 5vh;
 }
 .carousel .card .img {
   background: var(--main-color);

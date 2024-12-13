@@ -1,5 +1,9 @@
 /*------EVENEMENTS-----*/
-
+h2 {
+  font-size: 6vh !important;
+  text-align: center;
+  margin: 5vh 0;
+}
 /*--Filtre--*/
 .filtrer-image {
   width: 85%;

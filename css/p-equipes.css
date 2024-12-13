@@ -1,21 +1,81 @@
 /* --- Section globale --- */
+
 #allteam {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px; /* Espacement entre les sections */
-  padding: 50px 20px;
-  background-color: #f5f5f5; /* Couleur de fond pour une distinction */
 }
 
 /* --- Articles et descriptions --- */
-#allteam article {
-  text-align: center;
-  max-width: 800px;
+article {
+  max-width: 90%;
   margin: 0 auto;
-  font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 2vw;
+  border-radius: 8px;
+  position: relative; /* Nécessaire pour positionner le fond en arrière-plan */
+}
+
+article h1 {
+  width: 70%;
+  text-align: justify;
+}
+
+.background-image {
+  position: absolute;
+  top: 50%; /* Centre verticalement */
+  left: 50%; /* Centre horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour centrer */
+  width: 80%; /* Prend 80% de la largeur de la page */
+  height: auto; /* Maintient le ratio de l'image */
+  z-index: -1; /* Place l'image derrière le contenu */
+  opacity: 0.1; /* Rend l'image très fondue */
+}
+
+.content-box {
+  padding: 1rem;
+  border-radius: 8px;
+  width: 70%; /* Largeur de la boîte centrée */
+  margin: 1vh auto;
+  position: relative; /* Nécessaire pour que son contenu reste au-dessus */
+  z-index: 1; /* Assure que le contenu est devant l'image */
+}
+
+p {
+  font-size: 1rem;
+  text-align: left;
+  margin: 0 0 1rem 0;
+}
+
+.liste-equipes {
+  list-style: square;
+  padding-left: 2em;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.liste-equipes li {
+  padding: 0.5rem 1rem; /* Espacement interne */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s, transform 0.3s; /* Effet de transition */
+}
+
+.liste-equipes li:hover {
+  background-color: var(--main-color2); /* Couleur plus foncée au survol */
+  transform: translateX(10px); /* Déplacement léger à droite au survol */
+  color: white;
+}
+
+@media screen and (max-width: 860px) {
+  .background-image {
+    transform: translate(-45%, -38%) rotate(44deg);
+    width: 80vh;
+    height: 80vh;
+  }
 }
 
 /* --- Conteneur de chaque section (jeunes, séniors, vétérans) --- */
@@ -30,7 +90,6 @@
   gap: 20px; /* Espacement entre texte et image */
   padding: 20px;
   background-color: white; /* Fond blanc pour contraste */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
   border-radius: 10px;
 }
 
@@ -40,9 +99,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: left;
   padding: 20px;
+  margin-right: 10vh;
 }
 
 .text-box h1 {
@@ -52,13 +112,15 @@
 }
 
 .text-box h1 span {
-  color: #ff6600; /* Couleur pour accentuer les mots */
+  margin: 0;
 }
 
 .text-box p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  width: 40vh;
+  padding: 20px;
 }
 
 /* --- Images --- */
@@ -78,18 +140,27 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 768px) {
+@media (max-width: 1051px) {
   #jeunes,
-  #seniors,
   #veteran {
     flex-direction: column; /* Basculer en colonne */
     text-align: center;
     padding: 20px;
   }
+  #seniors {
+    flex-direction: column-reverse; /* Basculer en colonne */
+    text-align: center;
+    padding: 20px;
+  }
+  #seniors h1 {
+    flex-direction: column; /* Basculer en colonne */
+  }
 
   .text-box {
     text-align: center;
     align-items: center;
+    margin-right: 0;
+    margin-left: 0 !important;
   }
 
   .image-box img {

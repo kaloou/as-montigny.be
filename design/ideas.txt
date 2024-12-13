@@ -125,3 +125,6 @@ main page
 
 contact page
 - ajouter coach image/comité/etc
+
+equipe page
+- faire une fleche qui suit les titres j'usqu'au bout avec un Ensemble à la fin

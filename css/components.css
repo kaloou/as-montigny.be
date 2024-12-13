@@ -300,42 +300,40 @@ footer {
 
 /*--TITLES--*/
 .titre {
-  font-family: "Roboto" "Poppins" "Montserrat", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 0.1em;
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  padding: 20px;
-  font-weight: 900;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: "Futura Condensed Extra Bold", sans-serif;
+  font-size: 5vh;
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .titre span {
-  background-image: linear-gradient(to bottom, var(--main-color), var(--main-color));
+  font-family: inherit; /* Hérite de la police de .titre */
+  font-size: inherit; /* Hérite de la taille de police de .titre */
+  text-shadow: inherit; /* Hérite de l'ombre portée */
+  background-image: linear-gradient(to bottom, var(--main-color2), var(--main-color2));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
+
 .soustitre {
-  font-size: 2rem;
-  font-family: "Roboto" "Montserrat", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  padding: 20px;
+  font-size: 2.5vh; /* Utilisation de vh pour la taille de police */
+  font-family: "Inter", "Montserrat", sans-serif;
+  letter-spacing: 0.15em;
+  margin-bottom: 2vh; /* Marge en vh pour rester proportionnelle */
+  padding: 1vh 2.5vh; /* Espacement interne en vh */
   font-weight: bold;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  color: #333;
 }
+
 .soustitre span {
-  background-image: linear-gradient(to bottom, #640a34, #640a34);
+  background-image: linear-gradient(to bottom, #640a34, #f57f17);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
+
 .inter-bold {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;

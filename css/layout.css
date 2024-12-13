@@ -1,35 +1,30 @@
-/* Body page */
-body {
-  background: linear-gradient(to bottom, white, #f5f5f5);
-  overflow-x: hidden;
-}
-
-/* Header elements */
-header {
-  height: 30%;
-  background-color: white;
-}
-nav {
-  padding: 0;
-}
-
-/* Main elements */
-main {
-  padding: 0;
-}
-figure .banniere-container {
-  padding: auto;
-}
-
-section .wraps {
-  padding: 0;
-}
-section .matchs {
-  padding: auto;
-}
-/* Footer */
+/* ALL*/
 footer {
   position: relative;
   width: 100%;
   padding: 40px 0;
+}
+header {
+  height: 30%;
+  background-color: white;
+}
+/* HOME PAGE */
+#index-page {
+  background: linear-gradient(to bottom, white, #f5f5f5);
+  overflow-x: hidden;
+}
+#index-page nav {
+  padding: 0;
+}
+#index-page main {
+  padding: 0;
+}
+#index-page figure .banniere-container {
+  padding: auto;
+}
+#index-page section .wraps {
+  padding: 0;
+}
+#index-page section .matchs {
+  padding: auto;
 }

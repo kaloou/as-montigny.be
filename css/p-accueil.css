@@ -71,10 +71,7 @@
 }
 
 .content h1 {
-  font-family: "Futura Condensed Extra Bold";
-  font-size: 4vh;
-  margin-bottom: 20px;
-  color: #000;
+  margin-bottom: 1vh;
 }
 
 .content p {
@@ -412,10 +409,16 @@ body.menu-active #menu.four {
 #previous h2,
 #next h2,
 #classement h2 {
-  font-size: 2.5vh; /* Taille du titre */
+  font-size: 2.3vh; /* Taille du titre */
   color: #000; /* Couleur du titre */
   margin-bottom: 1vh;
   max-width: 28vh;
+}
+#previous .titre-box,
+#next .titre-box,
+#classement .titre-box {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .match-box {
@@ -474,16 +477,11 @@ body.menu-active #menu.four {
   transform: translateY(35%);
 }
 
-/* Style du tableau de classement */
-#classement {
-  width: 100%;
+/* Classement-box : Boîte contenant le tableau */
+.classement-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* Classement-box : Boîte contenant le tableau */
-.classement-box {
   width: 100%;
   height: 35vh;
   background-color: #ffffff;

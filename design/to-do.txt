@@ -1,2 +1,33 @@
 //Main page
-- décentré classement titre
+- 
+// jeunes
+- 
+- 
+// events
+- 
+// cotisation
+- 
+// planning
+-
+// boutique
+- réoarganiser l'html et le css
+- ajouter alerte qunand ajoute au panier
+- modifier bouton panier /plus joli
+- remettre le titre correctement
+// histoire
+- titre
+- reprendre le code de equipes et l'utiliser
+- raccourcir les textes/maybe
+// projets
+- titre
+- raccourcir les textes/maybe
+- reprendre le code de equipes et l'utiliser
+- ajouter volontariat avec lien facebook et image chinois
+// Contact
+- refaire la page de contac de A à Z
+- mettre les personnes du comités en premier plan
+- réseaux soiciaux 
+- formulaire de question
+// Autre
+- refaire le footer
+- vérifier le header
