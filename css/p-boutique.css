@@ -1,25 +1,110 @@
-/*--------------BOUTIQUE---------------- */
-.container {
-  max-width: 1068px;
-  margin: auto;
-  width: 100%;
-}
-.body-boutique section {
-  padding: 4rem 0 3rem;
-}
-.logo {
-  font-size: 1.1rem;
-  color: var(--text-color);
-  font-weight: 400;
-}
-#cart-icon {
-  font-size: 2.5rem;
-  cursor: pointer;
-  float: right;
-  margin-left: 90px;
+/*----BOUTIQUE----*/
+body {
+  background: linear-gradient(to bottom, white, #f5f5f5);
 }
 
-/* Cart */
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 6vh 0;
+}
+.title h2 {
+  font-size: 6vh;
+}
+
+/*--SHOP CONTENT--*/
+/* Conteneur principal */
+#boutique {
+  margin: 0 2vh;
+  position: relative;
+}
+
+/* Grille des produits */
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2vh;
+  justify-content: center;
+}
+
+/* Style des boîtes de produit */
+.product-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 42vh;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Images des produits */
+.product-img {
+  max-width: 100%;
+  max-height: 28vh;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  font-weight: 300;
+  font-optical-sizing: auto;
+  margin-bottom: 10px;
+}
+
+.add-cart {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  position: absolute; /* Positionnement dans le coin inférieur droit */
+  bottom: 10px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-cart:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/*--Cart--*/
 .cart {
   position: fixed;
   top: 0;
@@ -112,250 +197,72 @@
   color: var(--text-color);
   cursor: pointer;
 }
-.section-title {
+
+/* button for cart */
+#boutique .cart-button-container {
+  position: absolute;
+  top: -2.5rem;
+  right: -1rem;
+  z-index: 10;
+}
+
+#cart-icon {
   font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-.shop {
-  margin-top: 2rem;
+  cursor: pointer;
+  margin: 0 auto;
 }
 
-/* shop content */
-.shop-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-  gap: 1.5rem;
-}
-.product-box {
-  position: relative;
-}
-.product-box:hover {
-  padding: 10px;
-  border: 1px solid var(--text-color);
-  transition: 0.4s;
-}
-.product-img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 0.5rem;
-}
-.product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-.price {
-  font-weight: 500;
-}
-.add-cart {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: var(--text-color);
-  color: var(--bg-color);
-  padding: 10px;
-  cursor: pointer;
-}
-.add-cart:hover {
-  background: hsl(249, 32%, 17%);
-}
-/* ------------------------------- */
-.notifications {
-  position: fixed;
-  top: 30px;
-  right: 20px;
-}
-.notifications :where(.toast, .column) {
-  display: flex;
+.button-with-icon {
+  overflow: hidden;
+  display: inline-flex;
   align-items: center;
-}
-.notifications .toast {
-  width: 400px;
-  position: relative;
-  overflow: hidden;
-  list-style: none;
-  border-radius: 4px;
-  padding: 16px 17px;
-  margin-bottom: 10px;
-  background: var(--light);
-  justify-content: space-between;
-  animation: show_toast 0.3s ease forwards;
-}
-
-@keyframes show_toast {
-  0% {
-    transform: translateX(100%);
-  }
-  40% {
-    transform: translateX(-5%);
-  }
-  80% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-10px);
-  }
-}
-.notifications .toast.hide {
-  animation: hide_toast 0.3s ease forwards;
-}
-@keyframes hide_toast {
-  0% {
-    transform: translateX(-10px);
-  }
-  40% {
-    transform: translateX(0%);
-  }
-  80% {
-    transform: translateX(-5%);
-  }
-  100% {
-    transform: translateX(calc(100% + 20px));
-  }
-}
-.toast::before {
-  position: absolute;
-  content: "";
-  height: 3px;
-  width: 100%;
-  bottom: 0px;
-  left: 0px;
-  animation: progress 5s linear forwards;
-}
-@keyframes progress {
-  100% {
-    width: 0%;
-  }
-}
-.toast.success::before,
-.btn#success {
-  background: var(--success);
-}
-.toast.error::before,
-.btn#error {
-  background: var(--error);
-}
-.toast.warning::before,
-.btn#warning {
-  background: var(--warning);
-}
-.toast.info::before,
-.btn#info {
-  background: var(--info);
-}
-.toast .column i {
-  font-size: 1.75rem;
-}
-.toast.success .column i {
-  color: var(--success);
-}
-.toast.error .column i {
-  color: var(--error);
-}
-.toast.warning .column i {
-  color: var(--warning);
-}
-.toast.info .column i {
-  color: var(--info);
-}
-.toast .column span {
-  font-size: 1.07rem;
-  margin-left: 12px;
-}
-.toast i:last-child {
-  color: #aeb0d7;
-  cursor: pointer;
-}
-.toast i:last-child:hover {
-  color: var(--dark);
-}
-.buttons .btn {
-  border: none;
+  justify-content: center;
+  border: 1px solid var(--main-color);
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  padding: 12px 12px;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 3px;
   outline: none;
+  user-select: none;
   cursor: pointer;
-  margin: 0 5px;
-  color: var(--light);
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 4px;
-}
-
-/* ---login--- */
-#cart-log {
-  float: right;
-}
-#login-form {
-  display: none;
-}
-.form-box {
-  width: 380px;
-  height: 480px;
+  transform: translateY(0px);
   position: relative;
-  margin: 2% auto;
-  background: lightgray;
-  padding: 10px;
-  overflow: hidden;
-  border-radius: 10%;
-}
-.button-box {
-  width: 220px;
-  margin: 35px auto;
-  position: relative;
-  box-shadow: 0 0 20px 9px #ff61241f;
-  border-radius: 30px;
-}
-.toggle-btn {
-  padding: 10px 30px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  outline: none;
-  position: relative;
+  box-shadow: inset 0 30px 30px -15px rgba(100, 10, 52, 0.1), inset 0 0 0 1px rgba(100, 10, 52, 0.3),
+    inset 0 1px 20px rgba(100, 10, 52, 0.2), 0 3px 0 rgba(100, 10, 52, 0.8), 0 3px 2px rgba(100, 10, 52, 0.3),
+    0 5px 10px rgba(100, 10, 52, 0.2), 0 10px 20px rgba(100, 10, 52, 0.1);
+  background: var(--main-color2);
   color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  transition: 150ms all ease-in-out;
+  float: right;
+  margin-right: 4vh;
 }
-#btn {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 110px;
-  height: 100%;
-  background: var(--main-color);
-  border-radius: 30px;
-  transition: 0.5s;
+
+.button-with-icon #cart-icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s ease-in-out;
 }
-.input-group-login {
-  top: 150px;
-  position: absolute;
-  width: 280px;
-  transition: 0.5s;
+
+.button-with-icon:active {
+  transform: translateY(3px);
 }
-.input-group-register {
-  top: 120px;
-  position: absolute;
-  width: 280px;
-  transition: 0.5s;
+
+.button-with-icon:hover .text {
+  transform: translateX(80px);
 }
-.input-field {
-  width: 100%;
-  padding: 10px 0;
-  margin: 10px 0;
-  border-left: 0;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 1px solid #999;
-  outline: none;
-  background: transparent;
+
+.button-with-icon:hover #cart-icon {
+  transform: translate(28px);
 }
-.submit-btn {
-  width: 85%;
-  padding: 10px 30px;
-  cursor: pointer;
-  display: block;
-  margin: auto;
-  background: var(--main-color);
-  border: 0;
-  outline: none;
+
+.text {
+  transition: all 0.5s ease-in-out;
 }

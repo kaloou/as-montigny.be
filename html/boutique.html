@@ -10,6 +10,8 @@
 
     <!--javascript-->
     <script defer src="../javascript/boutique.js"></script>
+    <script defer src="../javascript/notifications.js"></script>
+
     <!--css-->
     <link rel="stylesheet" href="../css/p-boutique.css" />
     <link rel="stylesheet" href="../css/base.css" />
@@ -89,13 +91,13 @@
       </nav>
     </header>
 
-    <ul>
-      <li>
-        <i class="bx bxs-shopping-bag" id="cart-icon" style="margin-right: 5vh"></i>
-      </li>
-    </ul>
+    <!-- title -->
+    <div class="title">
+      <h2 class="titre">Notre<span> Boutique</span></h2>
+    </div>
 
     <!-- Cart -->
+
     <div class="cart">
       <h2 class="cart-title">Votre Panier</h2>
 
@@ -116,110 +118,155 @@
     </div>
 
     <!-- shop -->
-    <div id="container-boutique">
-      <section class="shop container">
-        <h2 class="titre">Notre<span> Boutique</span></h2>
-
-        <!-- content -->
-        <div class="shop-content">
-          <!-- Box 1 -->
-          <div class="product-box">
-            <img src="../img/boutique-veste_capuche.jpg" alt="" class="product-img" />
+    <section id="boutique">
+      <div class="cart-button-container">
+        <button class="button-with-icon">
+          <i class="bx bxs-shopping-bag icon" id="cart-icon"></i>
+          <span class="text">Panier</span>
+        </button>
+      </div>
+      <div class="shop-container">
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img src="../img/boutique-veste_capuche.jpg" alt="" class="product-img" />
+          <div class="product-info">
             <h2 class="product-title">Veste à capuchon</h2>
             <span class="price">25€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
           </div>
-          <!-- Box 2 -->
-          <div class="product-box">
-            <img src="../img/boutique-T-Shirt.jpg" alt="" class="product-img" />
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img src="../img/boutique-T-Shirt.jpg" alt="" class="product-img" />
+          <div class="product-info">
             <h2 class="product-title">T-shirt champ</h2>
             <span class="price">15€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
           </div>
-          <!-- Box 3 -->
-          <div class="product-box">
-            <img src="../img/boutique-polo.jpg" alt="" class="product-img" />
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img src="../img/boutique-polo.jpg" alt="" class="product-img" />
+          <div class="product-info">
             <h2 class="product-title">Polo champ</h2>
             <span class="price">17.5€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
           </div>
-          <!-- Box 4 -->
-          <div class="product-box">
-            <img src="../img/boutique-training.jpg" alt="" class="product-img" />
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img src="../img/boutique-training.jpg" alt="" class="product-img" />
+          <div class="product-info">
             <h2 class="product-title">Training</h2>
             <span class="price">25€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
           </div>
-          <!-- Box 5 -->
-          <div class="product-box">
-            <img src="../img/boutique-veste_coach.png" class="product-img" />
-            <h2 class="product-title">Veste Coach Black</h2>
-            <span class="price">60€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 6 -->
-          <div class="product-box">
-            <img src="../img/maillot1.png" class="product-img" />
-            <h2 class="product-title">Maillot extérieur</h2>
-            <span class="price">20€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 7 -->
-          <div class="product-box">
-            <img src="../img/boutique-T-shirt_prenom.png" alt="" class="product-img" />
-            <h2 class="product-title">T-shirt prenom</h2>
-            <span class="price">15€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 8 -->
-          <div class="product-box">
-            <img src="../img/boutique-maman1.png" alt="" class="product-img" />
-            <h2 class="product-title">T-Shirt maman</h2>
-            <span class="price">15€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 9 -->
-          <div class="product-box">
-            <img src="../img/boutique-Kit_Training.jpg" alt="" class="product-img" />
-            <h2 class="product-title">Kit Training</h2>
-            <span class="price">45€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 10-->
-          <div class="product-box">
-            <img src="../img/boutique-veste.jpg" alt="" class="product-img" />
-            <h2 class="product-title">Veste softshell</h2>
-            <span class="price">39€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 11 -->
-          <div class="product-box">
-            <img src="../img/boutique-kit_Match2.png" alt="" class="product-img" />
-            <h2 class="product-title">kit Match</h2>
-            <span class="price">45€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-          </div>
-          <!-- Box 12 -->
-          <div class="product-box">
-            <img src="../img/boutique-sweat.jpg" alt="" class="product-img" />
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 5 -->
+        <div class="product-box">
+          <img src="../img/boutique-sweat.jpg" alt="" class="product-img" />
+          <div class="product-info">
             <h2 class="product-title">Sweat Champ</h2>
             <span class="price">25€</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
           </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
         </div>
-      </section>
-    </div>
 
-    <div class="body">
-      <ul class="notifications"></ul>
+        <!-- Box 6 -->
+        <div class="product-box">
+          <img src="../img/maillot1.png" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">Maillot extérieur</h2>
+            <span class="price">20€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 7 -->
+        <div class="product-box">
+          <img src="../img/boutique-T-shirt_prenom.png" alt="" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">T-shirt prenom</h2>
+            <span class="price">15€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 8 -->
+        <div class="product-box">
+          <img src="../img/boutique-maman1.png" alt="" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">T-Shirt maman</h2>
+            <span class="price">15€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 9 -->
+        <div class="product-box">
+          <img src="../img/boutique-Kit_Training.jpg" alt="" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">Kit Training</h2>
+            <span class="price">45€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 10-->
+        <div class="product-box">
+          <img src="../img/boutique-veste.jpg" alt="" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">Veste softshell</h2>
+            <span class="price">39€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 11 -->
+        <div class="product-box">
+          <img src="../img/boutique-kit_Match2.png" alt="" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">kit Match</h2>
+            <span class="price">45€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+        <!-- Box 12 -->
+        <div class="product-box">
+          <img src="../img/boutique-veste_coach.png" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">Veste Coach Black</h2>
+            <span class="price">60€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
 
-      <div class="buttons" style="display: none">
-        <button class="btn" id="success">Success</button>
-        <button class="btn" id="error">Error</button>
-        <button class="btn" id="warning">Warning</button>
-        <button class="btn" id="info">Info</button>
+        <!-- Box 13 -->
+        <div class="product-box">
+          <img src="../img/boutique-haut_de_saison.png" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">Haut de Training (saison 24/25)</h2>
+            <span class="price">48€ </span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+
+        <!-- Box 14 -->
+        <div class="product-box">
+          <img src="../img/boutique-T-Shirt-SW.png" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">T-Shirt SW (noir/gris) (saison 24/25)</h2>
+            <span class="price">42€</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
+
+        <!-- Box 15 -->
+        <div class="product-box">
+          <img src="../img/boutique-sac-erima.png" class="product-img" />
+          <div class="product-info">
+            <h2 class="product-title">Sac avec rangement chaussures - taille M</h2>
+            <span class="price"> 30,00 €</span>
+          </div>
+          <i class="bx bx-shopping-bag add-cart" onclick="alert('Produit ajouté au panier !')"></i>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!--------Footer---------->
     <footer>

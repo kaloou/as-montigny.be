@@ -1,6 +1,7 @@
 //Main page
-- 
-// jeunes
+- ajouter animation texte apparition scroll
+- ajouter vrai equipe dans tableau
+// equipes
 - 
 - 
 // events
@@ -8,12 +9,9 @@
 // cotisation
 - 
 // planning
--
+- 
 // boutique
-- réoarganiser l'html et le css
-- ajouter alerte qunand ajoute au panier
-- modifier bouton panier /plus joli
-- remettre le titre correctement
+- ajouter nouveau produits
 // histoire
 - titre
 - reprendre le code de equipes et l'utiliser

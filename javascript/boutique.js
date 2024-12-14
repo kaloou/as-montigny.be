@@ -1,10 +1,10 @@
 // ----Cart-----
-let cartIcon = document.querySelector("#cart-icon");
+let cartButton = document.querySelector(".button-with-icon"); // Sélectionner le bouton entier
 let cart = document.querySelector(".cart");
 let closeCart = document.querySelector("#close-cart");
 
 // Ouvrir cart
-cartIcon.onclick = () => {
+cartButton.onclick = () => {
   cart.classList.add("active");
 };
 
@@ -48,7 +48,12 @@ function ready() {
 function removeCartItem(event) {
   var buttonClicked = event.target;
   buttonClicked.parentElement.remove();
-  updatetotal();
+  updatetotal(); // Mettre à jour le total après suppression
+
+  // Si le panier est vide, réinitialiser le total
+  if (document.getElementsByClassName("cart-box").length === 0) {
+    document.getElementsByClassName("total-price")[0].innerText = "€0.00";
+  }
 }
 
 // Changement de quantité
@@ -114,9 +119,10 @@ function updatetotal() {
     total = total + price * quantity;
     // Vérifier si le prix contient des centimes
     total = Math.round(total * 100) / 100;
-
-    document.getElementsByClassName("total-price")[0].innerText = "€" + total;
   }
+
+  // Mettre à jour le total
+  document.getElementsByClassName("total-price")[0].innerText = "€" + total.toFixed(2);
 }
 
 // -----------------------------------------------------------------------------

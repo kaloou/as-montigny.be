@@ -314,6 +314,11 @@ footer {
   -webkit-background-clip: text;
   color: transparent;
 }
+@media (max-width: 768px) {
+  .titre {
+    text-shadow: none;
+  }
+}
 
 .soustitre {
   font-size: 2.5vh; /* Utilisation de vh pour la taille de police */
