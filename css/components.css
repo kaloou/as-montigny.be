@@ -362,3 +362,79 @@ footer {
   background-position: 0 0, 85px 85px;
   filter: grayscale(100%);
 }
+
+/* button for cart and planning */
+#boutique .cart-button-container {
+  position: absolute;
+  top: -2.5rem;
+  right: -1rem;
+  z-index: 10;
+}
+
+#cart-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.button-with-icon {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--main-color);
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  padding: 12px 12px;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 3px;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  transform: translateY(0px);
+  position: relative;
+  box-shadow: inset 0 30px 30px -15px rgba(100, 10, 52, 0.1), inset 0 0 0 1px rgba(100, 10, 52, 0.3),
+    inset 0 1px 20px rgba(100, 10, 52, 0.2), 0 3px 0 rgba(100, 10, 52, 0.8), 0 3px 2px rgba(100, 10, 52, 0.3),
+    0 5px 10px rgba(100, 10, 52, 0.2), 0 10px 20px rgba(100, 10, 52, 0.1);
+  background: var(--main-color2);
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  transition: 150ms all ease-in-out;
+  float: right;
+  margin-right: 4vh;
+}
+
+.button-with-icon #cart-icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s ease-in-out;
+}
+.button-with-icon #calendar-icon {
+  transition: all 0.5s ease-in-out;
+  font-size: 25px;
+}
+
+.button-with-icon:active {
+  transform: translateY(3px);
+}
+
+.button-with-icon:hover .text {
+  transform: translateX(85px);
+}
+
+.button-with-icon:hover #cart-icon {
+  transform: translate(28px);
+}
+.button-with-icon:hover #calendar-icon {
+  transform: translate(38px);
+}
+
+.text {
+  transition: all 0.5s ease-in-out;
+}

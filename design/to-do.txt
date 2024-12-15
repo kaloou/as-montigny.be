@@ -1,6 +1,5 @@
 //Main page
-- ajouter une animation apparition scroll au 2 texte-box dans index.html
-- se servir du script python web.py pour récuperer ce qu'il print et l'insérer dans un fichier qui ensuite servira à remplir les données du calendrier dans index.html
+- 
 // equipes
 - 
 - 
@@ -28,3 +27,5 @@
 - en bas ajouter un formulaire pour poser une question en cas de besoin
 // Autre
 - réorganiser le footer du index.html
+- enlever chaque lien responsive.css dans chaque page
+- verfier le header de chaque page

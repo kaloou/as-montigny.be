@@ -12,7 +12,14 @@ h1 {
   text-align: center;
 }
 #planning {
-  margin-bottom: 5vh;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  width: 90%;
+  margin: 10vh auto 0;
 }
 
 #organigramme {
@@ -23,6 +30,7 @@ h1 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  width: 100%;
 }
 .img-container img {
   width: 90%;
@@ -146,4 +154,22 @@ img-container:hover img {
 .carousel .card span {
   color: #6a6d78;
   font-size: 1.31rem;
+}
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+/* Ajout pour le bouton */
+.cart-button-container {
+  position: absolute;
+  top: 10vh;
+  right: 5%;
+  z-index: 1;
 }
