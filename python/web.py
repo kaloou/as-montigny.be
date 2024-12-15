@@ -24,7 +24,7 @@ def extraire_donnees_match():
 
         # URL du logo à remplacer
         logo_a_remplacer = "https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09676.jpg"
-        logo_local = "../img/logo-as.png"
+        logo_local = "img/logo-as.png"
 
         # Extraction des matchs
         match_elements = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "game")))
@@ -93,7 +93,7 @@ def extraire_donnees_match():
                 continue
 
         # Sauvegarde des données en JSON
-        with open('donnees_matchs.json', 'w', encoding='utf-8') as f:
+        with open('data/donnees_matchs.json', 'w', encoding='utf-8') as f:
             json.dump(donnees_matchs, f, ensure_ascii=False, indent=4)
             
         print("Données extraites et sauvegardées avec succès dans donnees_matchs.json")

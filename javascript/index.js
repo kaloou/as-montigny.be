@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // add data from python/web.py to the calendar
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("donnees_matchs.json")
+  fetch("data/donnees_matchs.json")
     .then((response) => response.json())
     .then((data) => {
       const [dernierMatch, prochainMatch] = data.matchs;
