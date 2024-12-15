@@ -51,7 +51,6 @@ def extraire_donnees_match():
             images = match.find_elements(By.TAG_NAME, "img")
             for i, img in enumerate(images):
                 img_url = img.get_attribute("src")
-                # Vérifier si c'est le logo à remplacer
                 if img_url == logo_a_remplacer:
                     img_url = logo_local
                 if i == 0:
@@ -62,44 +61,43 @@ def extraire_donnees_match():
             donnees_matchs['matchs'].append(match_data)
 
         # Extraction du classement
-        rows = driver.find_elements(By.CSS_SELECTOR, "tr")
+        tbody = wait.until(
+            EC.presence_of_element_located((By.ID, "team-ranking-periode-generalRanking"))
+        )
         
-        for row in rows:
+        lignes = tbody.find_elements(By.TAG_NAME, "tr")
+        
+        for ligne in lignes:
             try:
-                if row.find_elements(By.CLASS_NAME, "position"):
-                    position = row.find_element(By.CLASS_NAME, "position").text
-                    
-                    team_cell = row.find_element(By.CLASS_NAME, "team")
-                    equipe = team_cell.find_element(By.TAG_NAME, "a").text
-                    logo = team_cell.find_element(By.CLASS_NAME, "redesign").get_attribute("src")
-                    
-                    # Vérifier si c'est le logo à remplacer
-                    if logo == logo_a_remplacer:
-                        logo = logo_local
-                    
-                    matchs_joues = row.find_elements(By.TAG_NAME, "td")[0].text
-                    points = row.find_element(By.CLASS_NAME, "punten").text
-                    
-                    equipe_data = {
-                        'position': position,
-                        'equipe': equipe,
-                        'matchs_joues': matchs_joues,
-                        'points': points,
-                        'logo': logo
-                    }
-                    
-                    donnees_matchs['classement'].append(equipe_data)
+                position = ligne.find_element(By.CLASS_NAME, "position").text
+                equipe_cell = ligne.find_element(By.CLASS_NAME, "team")
+                equipe = equipe_cell.find_element(By.TAG_NAME, "a").text
+                logo = equipe_cell.find_element(By.TAG_NAME, "img").get_attribute("src")
+                points = ligne.find_element(By.CLASS_NAME, "nomobile").text
+                matchs = ligne.find_elements(By.TAG_NAME, "td")[4].text
+                
+                equipe_data = {
+                    "position": position,
+                    "equipe": equipe,
+                    "matchs_joues": matchs,
+                    "points": points,
+                    "logo": logo
+                }
+                
+                donnees_matchs['classement'].append(equipe_data)
+                
             except Exception as e:
+                print(f"Erreur lors de l'extraction d'une ligne: {str(e)}")
                 continue
-
+        
         # Sauvegarde des données en JSON
         with open('data/donnees_matchs.json', 'w', encoding='utf-8') as f:
             json.dump(donnees_matchs, f, ensure_ascii=False, indent=4)
             
         print("Données extraites et sauvegardées avec succès dans donnees_matchs.json")
-
+        
     except Exception as e:
-        print("Erreur lors de l'extraction :", e)
+        print(f"Erreur lors de l'extraction : {str(e)}")
     
     finally:
         driver.quit()

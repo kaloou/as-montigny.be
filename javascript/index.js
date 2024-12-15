@@ -27,22 +27,6 @@ links.addEventListener("click", () => {
   }, 400);
 });
 
-// place the row table of our team in center
-document.addEventListener("DOMContentLoaded", function () {
-  // Sélectionner la ligne avec la classe 'our-team'
-  var ourTeamRow = document.querySelector(".our-team");
-
-  if (ourTeamRow) {
-    // Calculer la position de la ligne dans le tableau
-    var container = document.querySelector(".classement-scroll-container"); // Le conteneur défilant
-    var rowOffset = ourTeamRow.offsetTop; // Position de la ligne dans le tableau
-    var containerHeight = container.offsetHeight; // Hauteur du conteneur visible
-
-    // Faire défiler le tableau pour centrer la ligne avec un léger ajustement vers le haut
-    container.scrollTop = rowOffset - containerHeight / 3; // Défilement vers le haut (ici, vous pouvez ajuster le /3 pour plus ou moins de centrage)
-  }
-});
-
 // Animation au scroll pour les text-box
 document.addEventListener("DOMContentLoaded", function () {
   const textBoxes = document.querySelectorAll(".text-box, .text-box2");
@@ -95,3 +79,65 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Erreur:", error));
 });
+
+// Fonction pour centrer l'équipe dans le tableau
+function centerOurTeam() {
+  // Sélectionner la ligne avec la classe 'our-team'
+  var ourTeamRow = document.querySelector(".our-team");
+
+  if (ourTeamRow) {
+    // Calculer la position de la ligne dans le tableau
+    var container = document.querySelector(".classement-scroll-container");
+    var rowOffset = ourTeamRow.offsetTop;
+    var containerHeight = container.offsetHeight;
+
+    // Faire défiler le tableau pour centrer la ligne
+    container.scrollTop = rowOffset - containerHeight / 3;
+  }
+}
+
+// Fonction pour charger et afficher le classement
+async function chargerClassement() {
+  try {
+    const response = await fetch("data/donnees_matchs.json");
+    const data = await response.json();
+
+    // Sélectionner la table dans le DOM
+    const table = document.querySelector("#classement table");
+
+    // Vider le contenu actuel de la table
+    table.innerHTML = "";
+
+    // Parcourir les données du classement et créer les lignes
+    data.classement.forEach((equipe) => {
+      const tr = document.createElement("tr");
+
+      // Par défaut, toutes les équipes sont "other-team"
+      tr.className = "other-team";
+
+      // Si c'est AS MONTIGNY, ajouter la classe our-team à la place
+      if (equipe.equipe.includes("AS MONTIGNY")) {
+        tr.className = "our-team";
+      }
+
+      // Créer le contenu de la ligne
+      tr.innerHTML = `
+                    <td class="number">${equipe.position}</td>
+                    <td class="team-name">${equipe.equipe}</td>
+                    <td class="match-play">${equipe.matchs_joues}</td>
+                    <td class="points">${equipe.points}</td>
+                `;
+
+      // Ajouter la ligne au tableau
+      table.appendChild(tr);
+    });
+
+    // Appeler centerOurTeam APRÈS avoir rempli le tableau
+    setTimeout(centerOurTeam, 100); // Petit délai pour s'assurer que le DOM est bien mis à jour
+  } catch (error) {
+    console.error("Erreur lors du chargement du classement:", error);
+  }
+}
+
+// Appeler la fonction au chargement de la page
+document.addEventListener("DOMContentLoaded", chargerClassement);
