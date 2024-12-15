@@ -105,11 +105,15 @@ async function chargerClassement() {
     // Sélectionner la table dans le DOM
     const table = document.querySelector("#classement table");
 
+    // Mettre à jour le titre avec la catégorie
+    const titreMatch = document.querySelector("#classement .titre-match h3");
+    titreMatch.textContent = data.classement.categorie;
+
     // Vider le contenu actuel de la table
     table.innerHTML = "";
 
     // Parcourir les données du classement et créer les lignes
-    data.classement.forEach((equipe) => {
+    data.classement.equipes.forEach((equipe) => {
       const tr = document.createElement("tr");
 
       // Par défaut, toutes les équipes sont "other-team"
@@ -122,18 +126,18 @@ async function chargerClassement() {
 
       // Créer le contenu de la ligne
       tr.innerHTML = `
-                    <td class="number">${equipe.position}</td>
-                    <td class="team-name">${equipe.equipe}</td>
-                    <td class="match-play">${equipe.matchs_joues}</td>
-                    <td class="points">${equipe.points}</td>
-                `;
+          <td class="number">${equipe.position}</td>
+          <td class="team-name">${equipe.equipe}</td>
+          <td class="match-play">${equipe.matchs_joues}</td>
+          <td class="points">${equipe.points}</td>
+      `;
 
       // Ajouter la ligne au tableau
       table.appendChild(tr);
     });
 
     // Appeler centerOurTeam APRÈS avoir rempli le tableau
-    setTimeout(centerOurTeam, 100); // Petit délai pour s'assurer que le DOM est bien mis à jour
+    setTimeout(centerOurTeam, 100);
   } catch (error) {
     console.error("Erreur lors du chargement du classement:", error);
   }

@@ -19,7 +19,10 @@ def extraire_donnees_match():
         # Structure pour stocker les données
         donnees_matchs = {
             'matchs': [],
-            'classement': []
+            'classement': {
+                'categorie': '',
+                'equipes': []
+            }
         }
 
         # URL du logo à remplacer
@@ -84,11 +87,21 @@ def extraire_donnees_match():
                     "logo": logo
                 }
                 
-                donnees_matchs['classement'].append(equipe_data)
+                donnees_matchs['classement']['equipes'].append(equipe_data)
                 
             except Exception as e:
                 print(f"Erreur lors de l'extraction d'une ligne: {str(e)}")
                 continue
+        
+        # Extraction de la catégorie
+        try:
+            categorie = wait.until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "div.filter div.ng-star-inserted"))
+            ).text
+            donnees_matchs['classement']['categorie'] = categorie
+        except Exception as e:
+            print(f"Erreur lors de l'extraction de la catégorie: {str(e)}")
+            donnees_matchs['classement']['categorie'] = "Non disponible"
         
         # Sauvegarde des données en JSON
         with open('data/donnees_matchs.json', 'w', encoding='utf-8') as f:
