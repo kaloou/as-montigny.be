@@ -1,6 +1,6 @@
 //Main page
-- ajouter animation texte apparition scroll
-- ajouter vrai equipe dans tableau
+- ajouter une animation apparition scroll au 2 texte-box dans index.html
+- se servir du script python web.py pour récuperer ce qu'il print et l'insérer dans un fichier qui ensuite servira à remplir les données du calendrier dans index.html
 // equipes
 - 
 - 
@@ -11,21 +11,20 @@
 // planning
 - 
 // boutique
-- ajouter nouveau produits
+- 
 // histoire
-- titre
-- reprendre le code de equipes et l'utiliser
-- raccourcir les textes/maybe
+- centrer le titre
+- reprendre la structure css utilisée pour les équipes et l'utiliser pour histoire (je parle des propriétes flex-box)
+- raccourcir légèrement les textes/maybe
 // projets
-- titre
-- raccourcir les textes/maybe
-- reprendre le code de equipes et l'utiliser
-- ajouter volontariat avec lien facebook et image chinois
+- centrer le titre
+- raccourcir légèrement les textes/maybe
+- reprendre la structure css utilisée pour les équipes et l'utiliser pour histoire (je parle des propriétes flex-box)
+- créer un nouveau code pour parler du volontariat et ajouter lien utilisée l'image  pics25.jpg pour illustrer le volontariat
 // Contact
 - refaire la page de contac de A à Z
-- mettre les personnes du comités en premier plan
-- réseaux soiciaux 
-- formulaire de question
+- mettre les personnes du comités en premier plan -> 4 profile images
+- ajouté réseaux soiciaux 
+- en bas ajouter un formulaire pour poser une question en cas de besoin
 // Autre
-- refaire le footer
-- vérifier le header
+- réorganiser le footer du index.html

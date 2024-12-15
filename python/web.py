@@ -5,47 +5,105 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import undetected_chromedriver as uc
+import json
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
+def extraire_donnees_match():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    
+    try:
+        driver = uc.Chrome(options=chrome_options)
+        driver.get('https://www.acff.be/club/8361/equipe/305050/apercu')
+        wait = WebDriverWait(driver, 10)
+        
+        # Structure pour stocker les données
+        donnees_matchs = {
+            'matchs': [],
+            'classement': []
+        }
 
-# launch driver
-driver = uc.Chrome(options=chrome_options)
-driver.get('https://www.acff.be/club/8361/matches-a-venir')
+        # URL du logo à remplacer
+        logo_a_remplacer = "https://belgianfootball.s3.eu-central-1.amazonaws.com/s3fs-public/rbfa/img/logos/clubs/09676.jpg"
+        logo_local = "../img/logo-as.png"
 
-try:
-    # extraction des noms d'équipe
-    elements = WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "team-name"))
-    )
-    for element in elements:
-        print("Nom de l'équipe :", element.text)
+        # Extraction des matchs
+        match_elements = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "game")))
+        
+        for match in match_elements:
+            match_data = {
+                'categorie': match.find_element(By.CLASS_NAME, "game-type").text,
+                'equipe_domicile': '',
+                'equipe_visiteur': '',
+                'score': '',
+                'logo_domicile': '',
+                'logo_visiteur': '',
+                'date': match.find_element(By.CLASS_NAME, "date").text if match.find_elements(By.CLASS_NAME, "date") else "",
+                'type': 'dernier' if match_elements.index(match) == 0 else 'prochain'
+            }
+            
+            equipes = match.find_elements(By.CLASS_NAME, "team-name")
+            match_data['equipe_domicile'] = equipes[0].text if len(equipes) > 0 else ""
+            match_data['equipe_visiteur'] = equipes[1].text if len(equipes) > 1 else ""
+            
+            scores = match.find_elements(By.CLASS_NAME, "score")
+            match_data['score'] = scores[0].text if len(scores) > 0 else ""
+            
+            images = match.find_elements(By.TAG_NAME, "img")
+            for i, img in enumerate(images):
+                img_url = img.get_attribute("src")
+                # Vérifier si c'est le logo à remplacer
+                if img_url == logo_a_remplacer:
+                    img_url = logo_local
+                if i == 0:
+                    match_data['logo_domicile'] = img_url
+                elif i == 1:
+                    match_data['logo_visiteur'] = img_url
+            
+            donnees_matchs['matchs'].append(match_data)
 
-    # extraction des scores
-    scores = WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "score"))
-    )
-    for score in scores:
-        print("Score :", score.text)
+        # Extraction du classement
+        rows = driver.find_elements(By.CSS_SELECTOR, "tr")
+        
+        for row in rows:
+            try:
+                if row.find_elements(By.CLASS_NAME, "position"):
+                    position = row.find_element(By.CLASS_NAME, "position").text
+                    
+                    team_cell = row.find_element(By.CLASS_NAME, "team")
+                    equipe = team_cell.find_element(By.TAG_NAME, "a").text
+                    logo = team_cell.find_element(By.CLASS_NAME, "redesign").get_attribute("src")
+                    
+                    # Vérifier si c'est le logo à remplacer
+                    if logo == logo_a_remplacer:
+                        logo = logo_local
+                    
+                    matchs_joues = row.find_elements(By.TAG_NAME, "td")[0].text
+                    points = row.find_element(By.CLASS_NAME, "punten").text
+                    
+                    equipe_data = {
+                        'position': position,
+                        'equipe': equipe,
+                        'matchs_joues': matchs_joues,
+                        'points': points,
+                        'logo': logo
+                    }
+                    
+                    donnees_matchs['classement'].append(equipe_data)
+            except Exception as e:
+                continue
 
-    # extraction des catégories de match
-    categories = WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "game-type"))
-    )
-    for category in categories:
-        print("Catégorie :", category.text)
+        # Sauvegarde des données en JSON
+        with open('donnees_matchs.json', 'w', encoding='utf-8') as f:
+            json.dump(donnees_matchs, f, ensure_ascii=False, indent=4)
+            
+        print("Données extraites et sauvegardées avec succès dans donnees_matchs.json")
 
-    # extraction des images
-    images = WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.TAG_NAME, "img"))
-    )
-    for img in images:
-        img_url = img.get_attribute("src")
-        if img_url and "belgianfootball.s3.eu-central-1.amazonaws.com" in img_url and "/rbfa/img/logos/clubs/" in img_url:
-            print("Image URL :", img_url)
+    except Exception as e:
+        print("Erreur lors de l'extraction :", e)
+    
+    finally:
+        driver.quit()
 
-except Exception as e:
-    print("Erreur :", e)
-
-finally:
-    driver.quit()
+if __name__ == "__main__":
+    extraire_donnees_match()
+   
