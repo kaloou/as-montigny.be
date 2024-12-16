@@ -171,8 +171,9 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding: 60px 20px;
-  margin-bottom: 60px;
+  padding: 0 20px;
+  padding-top: 40px;
+  margin-bottom: 5vmin;
 }
 
 /* Nouvelle box pour le centrage */
@@ -185,7 +186,7 @@ footer {
 }
 
 .footer-section {
-  width: 100%; /* Prend toute la largeur du wrapper */
+  width: 100%;
   text-align: center;
 }
 
@@ -292,6 +293,9 @@ footer {
 
   .copyright {
     text-align: center;
+  }
+  .footer-container {
+    margin-bottom: 20vmin;
   }
 }
 /*--TITLES--*/
