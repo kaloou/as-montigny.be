@@ -12,20 +12,13 @@
 // boutique
 - 
 // histoire
-- centrer le titre
-- reprendre la structure css utilisée pour les équipes et l'utiliser pour histoire (je parle des propriétes flex-box)
-- raccourcir légèrement les textes/maybe
+- 
 // projets
-- centrer le titre
-- raccourcir légèrement les textes/maybe
-- reprendre la structure css utilisée pour les équipes et l'utiliser pour histoire (je parle des propriétes flex-box)
-- créer un nouveau code pour parler du volontariat et ajouter lien utilisée l'image  pics25.jpg pour illustrer le volontariat
+- 
 // Contact
-- refaire la page de contac de A à Z
 - mettre les personnes du comités en premier plan -> 4 profile images
-- ajouté réseaux soiciaux 
-- en bas ajouter un formulaire pour poser une question en cas de besoin
+- ajouté réseaux sociaux 
 // Autre
-- réorganiser le footer du index.html
+- réorganiser le footer du index.html et puis dans chaque page
 - enlever chaque lien responsive.css dans chaque page
 - verfier le header de chaque page

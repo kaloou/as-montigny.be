@@ -31,7 +31,6 @@
   margin: 1.5rem 0;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   flex-direction: row;
 }
@@ -39,8 +38,8 @@
 .story-photo {
   flex: 0 0 45%;
   height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
+  object-fit: contain;
+  border-radius: 15px;
 }
 
 .text-box {

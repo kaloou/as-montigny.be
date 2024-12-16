@@ -332,7 +332,7 @@ footer {
 }
 
 .soustitre span {
-  background-image: linear-gradient(to bottom, #640a34, #f57f17);
+  background-image: linear-gradient(to bottom, var(--main-color), var(--main-color2));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
