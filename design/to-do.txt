@@ -16,9 +16,9 @@
 // projets
 - 
 // Contact
-- mettre les personnes du comités en premier plan -> 4 profile images
-- ajouté réseaux sociaux 
+- 
 // Autre
 - réorganiser le footer du index.html et puis dans chaque page
 - enlever chaque lien responsive.css dans chaque page
 - verfier le header de chaque page
+- clear contenu inutile (comments and useless file)
