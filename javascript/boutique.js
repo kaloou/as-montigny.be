@@ -1,5 +1,5 @@
 // ----Cart-----
-let cartButton = document.querySelector(".button-with-icon"); // Sélectionner le bouton entier
+let cartButton = document.querySelector(".button-with-icon");
 let cart = document.querySelector(".cart");
 let closeCart = document.querySelector("#close-cart");
 
@@ -48,9 +48,9 @@ function ready() {
 function removeCartItem(event) {
   var buttonClicked = event.target;
   buttonClicked.parentElement.remove();
-  updatetotal(); // Mettre à jour le total après suppression
+  updatetotal();
 
-  // Si le panier est vide, réinitialiser le total
+  // Reset
   if (document.getElementsByClassName("cart-box").length === 0) {
     document.getElementsByClassName("total-price")[0].innerText = "€0.00";
   }

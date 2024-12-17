@@ -1,12 +1,10 @@
-/* --- Section globale --- */
-
+/* ALL TEAM */
 #allteam {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* --- Articles et descriptions --- */
 article {
   max-width: 90%;
   margin: 0 auto;
@@ -17,7 +15,7 @@ article {
   align-items: center;
   padding: 5vh 2vw;
   border-radius: 8px;
-  position: relative; /* Nécessaire pour positionner le fond en arrière-plan */
+  position: relative;
 }
 
 article h1 {
@@ -27,22 +25,22 @@ article h1 {
 
 .background-image {
   position: absolute;
-  top: 50%; /* Centre verticalement */
-  left: 50%; /* Centre horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste pour centrer */
-  width: 80%; /* Prend 80% de la largeur de la page */
-  height: auto; /* Maintient le ratio de l'image */
-  z-index: -1; /* Place l'image derrière le contenu */
-  opacity: 0.1; /* Rend l'image très fondue */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: -1;
+  opacity: 0.1;
 }
 
 .content-box {
   padding: 1rem;
   border-radius: 8px;
-  width: 70%; /* Largeur de la boîte centrée */
+  width: 70%;
   margin: 1vh auto;
-  position: relative; /* Nécessaire pour que son contenu reste au-dessus */
-  z-index: 1; /* Assure que le contenu est devant l'image */
+  position: relative;
+  z-index: 1;
 }
 
 p {
@@ -59,14 +57,14 @@ p {
 }
 
 .liste-equipes li {
-  padding: 0.5rem 1rem; /* Espacement interne */
-  border-radius: 5px; /* Coins arrondis */
-  transition: background-color 0.3s, transform 0.3s; /* Effet de transition */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .liste-equipes li:hover {
-  background-color: var(--main-color2); /* Couleur plus foncée au survol */
-  transform: translateX(10px); /* Déplacement léger à droite au survol */
+  background-color: var(--main-color2);
+  transform: translateX(10px);
   color: white;
 }
 
@@ -78,24 +76,23 @@ p {
   }
 }
 
-/* --- Conteneur de chaque section (jeunes, séniors, vétérans) --- */
+/* container */
 #jeunes,
 #seniors,
 #veteran {
   display: flex;
-  flex-wrap: wrap; /* Pour gérer les basculements en responsive */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  gap: 20px; /* Espacement entre texte et image */
+  gap: 20px;
   padding: 20px;
-  background-color: white; /* Fond blanc pour contraste */
+  background-color: white;
   border-radius: 10px;
 }
 
-/* --- Texte --- */
 .text-box {
-  flex: 1 1 45%; /* Occupe environ la moitié de l'espace */
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,9 +120,8 @@ p {
   padding: 20px;
 }
 
-/* --- Images --- */
 .image-box {
-  flex: 1 1 45%; /* Occupe environ la moitié de l'espace */
+  flex: 1 1 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,27 +129,26 @@ p {
 }
 
 .image-box img {
-  width: 100%; /* Remplit l'espace disponible */
+  width: 100%;
   height: auto;
-  border-radius: 10px; /* Coins arrondis pour cohérence */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour la profondeur */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Responsive --- */
 @media (max-width: 1051px) {
   #jeunes,
   #veteran {
-    flex-direction: column; /* Basculer en colonne */
+    flex-direction: column;
     text-align: center;
     padding: 20px;
   }
   #seniors {
-    flex-direction: column-reverse; /* Basculer en colonne */
+    flex-direction: column-reverse;
     text-align: center;
     padding: 20px;
   }
   #seniors h1 {
-    flex-direction: column; /* Basculer en colonne */
+    flex-direction: column;
   }
 
   .text-box {
@@ -164,7 +159,7 @@ p {
   }
 
   .image-box img {
-    width: 80%; /* Réduit légèrement la taille des images */
+    width: 80%;
     border-radius: 8px;
   }
 }

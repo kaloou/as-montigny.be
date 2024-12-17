@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // Arrête d'observer une fois animé
+        observer.unobserve(entry.target);
       }
     });
   }, options);
@@ -82,11 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fonction pour centrer l'équipe dans le tableau
 function centerOurTeam() {
-  // Sélectionner la ligne avec la classe 'our-team'
   var ourTeamRow = document.querySelector(".our-team");
 
   if (ourTeamRow) {
-    // Calculer la position de la ligne dans le tableau
     var container = document.querySelector(".classement-scroll-container");
     var rowOffset = ourTeamRow.offsetTop;
     var containerHeight = container.offsetHeight;
@@ -132,16 +130,14 @@ async function chargerClassement() {
           <td class="points">${equipe.points}</td>
       `;
 
-      // Ajouter la ligne au tableau
       table.appendChild(tr);
     });
 
-    // Appeler centerOurTeam APRÈS avoir rempli le tableau
+    // Centrer
     setTimeout(centerOurTeam, 100);
   } catch (error) {
     console.error("Erreur lors du chargement du classement:", error);
   }
 }
 
-// Appeler la fonction au chargement de la page
 document.addEventListener("DOMContentLoaded", chargerClassement);

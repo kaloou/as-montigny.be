@@ -1,4 +1,4 @@
-/*---HISTOIRE--- */
+/* HISTOIRE */
 #allstory {
   display: flex;
   flex-direction: column;
@@ -9,19 +9,16 @@
   padding: 5vh 0;
 }
 
-/* Titre */
 .titre {
   text-align: center;
   margin: 5vh auto;
   font-size: 2.5rem;
   color: var(--main-color);
 }
-
 .titre span {
-  color: var(--secondary-color);
+  color: var(--main-color2);
 }
 
-/* Structure des stories */
 .story {
   display: flex;
   justify-content: space-between;
@@ -56,7 +53,6 @@
   overflow-y: auto;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .story {
     flex-direction: column;

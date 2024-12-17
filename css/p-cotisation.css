@@ -1,14 +1,15 @@
+/* CARDS */
 .all-cards {
   display: flex;
-  flex-wrap: wrap; /* Prevent wrapping onto multiple lines */
-  gap: 1rem; /* Space between cards */
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
   margin: 50px 0 60px 0;
 }
 
 .card {
-  flex: 0 0 auto; /* Prevent cards from shrinking to fit the container */
-  width: 320px; /* Set width for each card */
+  flex: 0 0 auto;
+  width: 320px;
   display: flex;
   flex-direction: column;
   border-radius: 0.25rem;
@@ -37,10 +38,10 @@
 }
 
 .title-underline {
-  border: none; /* Pas de bordure par défaut */
-  height: 2px; /* Épaisseur de la ligne */
-  background-color: var(--yellow-color); /* Couleur de la ligne */
-  margin: 10px 0; /* Marges autour de la ligne */
+  border: none;
+  height: 2px;
+  background-color: var(--yellow-color);
+  margin: 10px 0;
 }
 
 .desc {

@@ -1,5 +1,4 @@
-/* --------CONTACT--------- */
-
+/* CONTACT */
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -89,12 +88,12 @@
   font-style: italic;
 }
 
-/* Animation d'apparition */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -134,7 +133,6 @@
   height: 20px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -146,7 +144,6 @@
   }
 }
 
-/* Style pour la section des réseaux sociaux */
 .social-contact {
   display: flex;
   gap: 1rem;

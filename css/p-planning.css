@@ -1,7 +1,7 @@
+/* planning */
 main {
   margin-top: 10vh;
 }
-/* Centrer la carte au centre de la page */
 
 h1 {
   font-family: "Futura Condensed Extra Bold";
@@ -11,6 +11,7 @@ h1 {
   text-transform: uppercase;
   text-align: center;
 }
+
 #planning {
   margin-top: 10vh;
   display: flex;
@@ -20,6 +21,13 @@ h1 {
   position: relative;
   width: 90%;
   margin: 10vh auto 0;
+}
+
+.cart-button-container {
+  position: absolute;
+  top: 10vh;
+  right: 5%;
+  z-index: 1;
 }
 
 #organigramme {
@@ -32,15 +40,17 @@ h1 {
   overflow: hidden;
   width: 100%;
 }
+
 .img-container img {
   width: 90%;
   border: 4px solid var(--main-color);
   border-radius: 1rem;
   transition: transform 0.3s ease;
 }
+
 img-container:hover img {
-  transform: scale(1.5); /* Zoom */
-  cursor: zoom-in; /* Indicateur de zoom */
+  transform: scale(1.5);
+  cursor: zoom-in;
 }
 
 #organigramme p {
@@ -48,7 +58,7 @@ img-container:hover img {
   margin: 5vh auto;
 }
 
-/*-----Coach-----*/
+/* Coach */
 #member {
   width: 100%;
   background: url(../img/banner-coach.JPG);
@@ -58,6 +68,7 @@ img-container:hover img {
   background-attachment: fixed;
   margin-top: 10vh;
 }
+
 .wrapper {
   margin: 0 auto;
   max-width: 1100px;
@@ -65,6 +76,7 @@ img-container:hover img {
   position: relative;
   align-items: center;
 }
+
 .wrapper i {
   top: 50%;
   height: 50px;
@@ -85,12 +97,15 @@ img-container:hover img {
 .wrapper i:active {
   transform: translateY(-50%) scale(0.85);
 }
+
 .wrapper i:first-child {
   left: -22px;
 }
+
 .wrapper i:last-child {
   right: -22px;
 }
+
 .wrapper .carousel {
   display: grid;
   grid-auto-flow: column;
@@ -102,25 +117,31 @@ img-container:hover img {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
+
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
 .carousel.no-transition {
   scroll-behavior: auto;
 }
+
 .carousel.dragging {
   scroll-snap-type: none;
   scroll-behavior: auto;
 }
+
 .carousel.dragging .card {
   cursor: grab;
   user-select: none;
 }
+
 .carousel :where(.card, .img) {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .carousel .card {
   scroll-snap-align: start;
   height: 350px;
@@ -133,12 +154,14 @@ img-container:hover img {
   align-items: center;
   margin-top: 5vh;
 }
+
 .carousel .card .img {
   background: var(--main-color);
   height: 148px;
   width: 148px;
   border-radius: 50%;
 }
+
 .card .img img {
   width: 140px;
   height: 140px;
@@ -146,30 +169,26 @@ img-container:hover img {
   object-fit: cover;
   border: 4px solid #fff;
 }
+
 .carousel .card h2 {
   font-weight: 700;
   font-size: 1.56rem;
   margin: 30px 0 5px;
 }
+
 .carousel .card span {
   color: #6a6d78;
   font-size: 1.31rem;
 }
+
 @media screen and (max-width: 900px) {
   .wrapper .carousel {
     grid-auto-columns: calc((100% / 2) - 9px);
   }
 }
+
 @media screen and (max-width: 600px) {
   .wrapper .carousel {
     grid-auto-columns: 100%;
   }
-}
-
-/* Ajout pour le bouton */
-.cart-button-container {
-  position: absolute;
-  top: 10vh;
-  right: 5%;
-  z-index: 1;
 }

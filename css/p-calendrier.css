@@ -1,4 +1,4 @@
-/*-----dernier match-----*/
+/* dernier match */
 .match-container {
   height: 1200px;
   width: 100%;
@@ -9,6 +9,7 @@
   background-attachment: fixed;
   opacity: 1;
 }
+
 .menu-container {
   height: 20vh;
   width: 90%;
@@ -24,6 +25,7 @@
   margin: 0 auto;
   margin-top: 100px;
 }
+
 .team-container {
   display: flex;
   align-items: center;
@@ -31,6 +33,7 @@
   flex-direction: column;
   width: 30%;
 }
+
 .team-container img {
   width: 100px;
   height: 100px;
@@ -39,10 +42,12 @@
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
 .team-container h2,
 h4 {
   text-align: center;
 }
+
 .score-container {
   display: flex;
   flex-direction: column;
@@ -50,16 +55,19 @@ h4 {
   justify-content: center;
   width: 40%;
 }
+
 .score-container p {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .score-container h3 {
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
 }
+
 .score-container a {
   background-color: var(--main-color);
   color: white;

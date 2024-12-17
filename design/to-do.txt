@@ -18,7 +18,6 @@
 // Contact
 - 
 // Autre
-- réorganiser le footer du index.html et puis dans chaque page
 - enlever chaque lien responsive.css dans chaque page
-- verfier le header de chaque page
+- verfier le header et le head de chaque page 
 - clear contenu inutile (comments and useless file)
