@@ -1,13 +1,11 @@
 name: Run web.py script
 
 on:
-  schedule:
-    - cron: "0 0 * * *" # Exécuter tous les jours à minuit
   workflow_dispatch:
 
 jobs:
   run-script:
-    runs-on: ubuntu-22.04 # Spécifie une version stable d'Ubuntu
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
@@ -18,18 +16,18 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install system dependencies
+      - name: Install specific version of Chrome
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
-          CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
-          wget -N https://chromedriver.storage.googleapis.com/$(echo $CHROME_VERSION | cut -d'.' -f1-3)/chromedriver_linux64.zip
+          wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_110.0.5481.100-1_amd64.deb
+          sudo dpkg -i google-chrome-stable_110.0.5481.100-1_amd64.deb || sudo apt-get -f install -y
+
+      - name: Install Chromedriver
+        run: |
+          wget -N https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
           rm chromedriver_linux64.zip
 
-      - name: Check Chrome and ChromeDriver versions
+      - name: Check Chrome and Chromedriver versions
         run: |
           google-chrome --version
           chromedriver --version
@@ -40,4 +38,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Python script
-        run: python web.py || exit 1
+        run: python web.py
